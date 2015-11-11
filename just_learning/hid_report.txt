@@ -1,0 +1,5692 @@
+HID device (vID=0x056d, pID=0x0002, v=0x7530); EIZO; EIZO USB HID Monitor, Path: \\?\hid#vid_056d&pid_0002#7&37ff2e90&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_056d&pid_0002#7&37ff2e90&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_056D&PID_0002\7&37FF2E90&0&0000
+
+  Port (ID): 21
+
+  Port (str):USB\VID_056D&PID_0002\6&2C75C949&0&3
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    EIZO
+Product Sting:          EIZO USB HID Monitor
+Serial Number:          
+
+Vendor ID:              0x056d
+Product ID:             0x0002
+Version number:         0x7530
+
+Device Path:            \\?\hid#vid_056d&pid_0002#7&37ff2e90&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_056D&PID_0002\7&37FF2E90&0&0000
+Parent Instance Id:     21
+
+Top level usage:        Page=0x0080, Usage=0x01
+Usage identification:   Unknown Page/usage
+Link collections:       2 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     74 byte(s)
+Buttons:    0 button(s)
+Values:     52 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     293 byte(s)
+Buttons:    2 button(s)
+Values:     101 value(s)
+
+*** Input Caps ***
+
+    Usage 224 (0xe0), Page 0xc
+    (Consumer device, Volume usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 20
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 92
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 16 (0x10), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 1
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 200
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 93
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 18 (0x12), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 2
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 140
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 94
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 22 (0x16), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 3
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 95
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 24 (0x18), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 4
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 96
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 26 (0x1a), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 5
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 97
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 32 (0x20), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 6
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2300
+        logical_min: 640
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 98
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 7
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 99
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 172 (0xac), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 32
+        data_index: 8
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 200000
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 100
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 174 (0xae), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 9
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 20000
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 100
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 7 (0x7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 10
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 15
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 1
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 9 (0x9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 11
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 2
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 15 (0xf), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 12
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 3
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 16 (0x10), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 13
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 7
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 4
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 21 (0x15), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 14
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 31
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 5
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 102 (0x66), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 15
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 4
+        logical_min: 2
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 21
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 118 (0x76), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 16
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 5
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 22
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 129 (0x81), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 17
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 15
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 23
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 130 (0x82), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 18
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 24
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 134 (0x86), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 19
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 25
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 135 (0x87), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 20
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 26
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 136 (0x88), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 21
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 27
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 137 (0x89), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 22
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 28
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 138 (0x8a), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 23
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 29
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 139 (0x8b), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 24
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 30
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 140 (0x8c), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 25
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 31
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 141 (0x8d), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 26
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 32
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 142 (0x8e), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 27
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 33
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 143 (0x8f), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 28
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 34
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 160 (0xa0), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 29
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 3200
+        logical_min: 320
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 35
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 161 (0xa1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 30
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 63
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 36
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 165 (0xa5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 31
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 37
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 167 (0xa7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 32
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 31
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 38
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 171 (0xab), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 33
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 4
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 39
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 179 (0xb3), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 34
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 40
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 180 (0xb4), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 35
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 64
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 41
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 181 (0xb5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 36
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 42
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 182 (0xb6), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 37
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 43
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 183 (0xb7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 38
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 44
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 188 (0xbc), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 39
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 8
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 47
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 201 (0xc9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 40
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 54
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 197 (0xc5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 41
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 52
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 184 (0xb8), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 42
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 45
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 185 (0xb9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 43
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 46
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 206 (0xce), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 44
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 73
+        report_id: 57
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 13 (0xd), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 45
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 62
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 55 (0x37), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 46
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 64
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 60 (0x3c), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 47
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 65
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 69 (0x45), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 48
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 66
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 72 (0x48), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 49
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 3
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 67
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 50
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 63
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 40 (0x28), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 51
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 80
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Feature Caps ***
+
+    Usage 2 (0x2), Page 0x81
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 11
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 1
+        link_usage: 176 (0xb0)
+        link_usage_page: 130 (0x82)
+        report_id: 101
+        string_index: 0
+
+    Usage 1 (0x1), Page 0x81
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 10
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 1
+        link_usage: 176 (0xb0)
+        link_usage_page: 130 (0x82)
+        report_id: 101
+        string_index: 0
+
+    Usage 224 (0xe0), Page 0xc
+    (Consumer device, Volume usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 20
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 92
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 16 (0x10), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 1
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 200
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 93
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 18 (0x12), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 2
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 140
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 94
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 22 (0x16), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 3
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 95
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 24 (0x18), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 4
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 96
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 26 (0x1a), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 5
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 97
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 32 (0x20), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 6
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2300
+        logical_min: 640
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 98
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 7
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 99
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 172 (0xac), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 32
+        data_index: 8
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 200000
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 100
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 174 (0xae), Page 0x82
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 9
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 20000
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 100
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 7 (0x7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 12
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 15
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 1
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 9 (0x9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 13
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 2
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 15 (0xf), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 14
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 3
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 16 (0x10), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 15
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 7
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 4
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 21 (0x15), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 16
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 31
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 5
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 47 (0x2f), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 17
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 6
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 18
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 8191
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 7
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 49 (0x31), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 19
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 8
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 50 (0x32), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 32
+        data_index: 20
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 16777215
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 9
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 51 (0x33), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 21
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 10
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 52 (0x34), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 22
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 128
+        report_id: 11
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 53 (0x35), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 23
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 24
+        report_id: 12
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 55 (0x37), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 24
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 3
+        report_id: 14
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 61 (0x3d), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 25
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 32
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 19
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 62 (0x3e), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 26
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 256
+        report_id: 20
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 102 (0x66), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 27
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 4
+        logical_min: 2
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 21
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 118 (0x76), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 28
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 5
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 22
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 129 (0x81), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 29
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 15
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 23
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 130 (0x82), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 30
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 24
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 134 (0x86), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 31
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 25
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 135 (0x87), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 32
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 26
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 136 (0x88), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 33
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 127
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 27
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 137 (0x89), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 34
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 28
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 138 (0x8a), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 35
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 29
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 139 (0x8b), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 36
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 30
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 140 (0x8c), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 37
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 31
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 141 (0x8d), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 38
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 32
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 142 (0x8e), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 39
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 33
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 143 (0x8f), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 40
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 34
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 160 (0xa0), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 41
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 3200
+        logical_min: 320
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 35
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 161 (0xa1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 42
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 63
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 36
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 165 (0xa5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 43
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 37
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 167 (0xa7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 44
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 31
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 38
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 171 (0xab), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 45
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 4
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 39
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 179 (0xb3), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 46
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 40
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 180 (0xb4), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 47
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 64
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 41
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 181 (0xb5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 48
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 42
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 182 (0xb6), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 49
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 43
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 183 (0xb7), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 50
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 511
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 44
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 188 (0xbc), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 51
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 8
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 47
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 193 (0xc1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 52
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 49
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 195 (0xc3), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 53
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 8
+        report_id: 50
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 201 (0xc9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 54
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 54
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 196 (0xc4), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 55
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 51
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 197 (0xc5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 56
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 52
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 198 (0xc6), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 57
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 119
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 53
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 225 (0xe1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 58
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 12
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 58
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 54 (0x36), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 59
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 17
+        report_id: 13
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 56 (0x38), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 60
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 33
+        report_id: 15
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 57 (0x39), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 61
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 33
+        report_id: 16
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 58 (0x3a), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 62
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 33
+        report_id: 17
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 59 (0x3b), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 63
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 17
+        report_id: 18
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 191 (0xbf), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 64
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 48
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 226 (0xe2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 65
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 59
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 202 (0xca), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 66
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1920
+        logical_min: 320
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 55
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 203 (0xcb), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 67
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1200
+        logical_min: 200
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 56
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 184 (0xb8), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 68
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 45
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 185 (0xb9), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 69
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 46
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 206 (0xce), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 70
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 73
+        report_id: 57
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 7 (0x7), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 71
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 2
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 60
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 12 (0xc), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 72
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 61
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 13 (0xd), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 73
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 62
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 55 (0x37), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 74
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 64
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 60 (0x3c), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 75
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 65
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 69 (0x45), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 76
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 66
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 72 (0x48), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 77
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 3
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 67
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 73 (0x49), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 78
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 68
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 161 (0xa1), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 79
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 4
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 70
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 80
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 63
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 192 (0xc0), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 81
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 65535
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 71
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 160 (0xa0), Page 0xff01
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 82
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 13
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 69
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 2 (0x2), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 83
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 200
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 72
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 6 (0x6), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 84
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 74
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 13 (0xd), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 85
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 75
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 16 (0x10), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 86
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 76
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 17 (0x11), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 87
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 292
+        report_id: 77
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 18 (0x12), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 88
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 78
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 89
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 82
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 49 (0x31), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 90
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 83
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 50 (0x32), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 16
+        data_index: 91
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 84
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 3 (0x3), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 92
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 73
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 40 (0x28), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 93
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 80
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 33 (0x21), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 94
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 79
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 41 (0x29), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 95
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 1
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 81
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 51 (0x33), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 96
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 85
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 55 (0x37), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 97
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 89
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 66 (0x42), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 98
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 1
+        report_id: 90
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 52 (0x34), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 99
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 256
+        report_id: 86
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 53 (0x35), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 100
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 2
+        report_id: 87
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 54 (0x36), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 101
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 8
+        report_id: 88
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 80 (0x50), Page 0xff02
+    (Unknown Page/usage)
+        bit_field: 258
+        bit_size: 8
+        data_index: 102
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 128 (0x80)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 16
+        report_id: 91
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_02&col01#8&359e0a45&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_02&col01#8&359e0a45&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_02&COL01\8&359E0A45&0&0000
+
+  Port (ID): 22
+
+  Port (str):USB\VID_046D&PID_C52B&MI_02\7&2C858C52&0&0002
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_02&col01#8&359e0a45&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_02&COL01\8&359E0A45&0&0000
+Parent Instance Id:     22
+
+Top level usage:        Page=0xff00, Usage=0x01
+Usage identification:   Unknown Page/usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     7 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     7 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage 1 (0x1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 65280 (0xff00)
+        report_id: 16
+        string_index: 0
+
+*** Output Caps ***
+
+    Usage 1 (0x1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 65280 (0xff00)
+        report_id: 16
+        string_index: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_02&col02#8&359e0a45&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_02&col02#8&359e0a45&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_02&COL02\8&359E0A45&0&0001
+
+  Port (ID): 22
+
+  Port (str):USB\VID_046D&PID_C52B&MI_02\7&2C858C52&0&0002
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_02&col02#8&359e0a45&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_02&COL02\8&359E0A45&0&0001
+Parent Instance Id:     22
+
+Top level usage:        Page=0xff00, Usage=0x02
+Usage identification:   Unknown Page/usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     20 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     20 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage 2 (0x2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 2 (0x2)
+        link_usage_page: 65280 (0xff00)
+        report_id: 17
+        string_index: 0
+
+*** Output Caps ***
+
+    Usage 2 (0x2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 2 (0x2)
+        link_usage_page: 65280 (0xff00)
+        report_id: 17
+        string_index: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_02&col03#8&359e0a45&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_02&col03#8&359e0a45&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_02&COL03\8&359E0A45&0&0002
+
+  Port (ID): 22
+
+  Port (str):USB\VID_046D&PID_C52B&MI_02\7&2C858C52&0&0002
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_02&col03#8&359e0a45&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_02&COL03\8&359E0A45&0&0002
+Parent Instance Id:     22
+
+Top level usage:        Page=0xff00, Usage=0x04
+Usage identification:   Unknown Page/usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     32 byte(s)
+Buttons:    2 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     32 byte(s)
+Buttons:    2 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage 65 (0x41), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 65280 (0xff00)
+        report_id: 32
+        string_index: 0
+
+    Usage 66 (0x42), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 1
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 65280 (0xff00)
+        report_id: 33
+        string_index: 0
+
+*** Output Caps ***
+
+    Usage 65 (0x41), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 65280 (0xff00)
+        report_id: 32
+        string_index: 0
+
+    Usage 66 (0x42), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 0
+        data_index: 1
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 65280 (0xff00)
+        report_id: 33
+        string_index: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_01&col02#8&11c6cc83&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_01&col02#8&11c6cc83&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_01&COL02\8&11C6CC83&0&0001
+
+  Port (ID): 24
+
+  Port (str):USB\VID_046D&PID_C52B&MI_01\7&2C858C52&0&0001
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_01&col02#8&11c6cc83&0&0001#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_01&COL02\8&11C6CC83&0&0001
+Parent Instance Id:     24
+
+Top level usage:        Page=0x000c, Usage=0x01
+Usage identification:   Consumer device, Consumer Control usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     5 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage Range 1~652 (0x1~0x28c), Page 0xc (Consumer)
+        bit_field: 0
+        data_index_max: 651
+        data_index_min: 0
+        designator_max: 0
+        designator_min: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 1
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 1 (0x1)
+        link_usage_page: 12 (0xc)
+        report_id: 3
+        string_max: 0
+        string_min: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_01&col03#8&11c6cc83&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_01&col03#8&11c6cc83&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_01&COL03\8&11C6CC83&0&0002
+
+  Port (ID): 24
+
+  Port (str):USB\VID_046D&PID_C52B&MI_01\7&2C858C52&0&0001
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_01&col03#8&11c6cc83&0&0002#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_01&COL03\8&11C6CC83&0&0002
+Parent Instance Id:     24
+
+Top level usage:        Page=0x0001, Usage=0x80
+Usage identification:   Generic Desktop device, System Control usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     2 byte(s)
+Buttons:    3 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage 131 (0x83), Page 0x1
+    (Generic Desktop device, System Wake Up usage)
+        bit_field: 96
+        data_index: 2
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 128 (0x80)
+        link_usage_page: 1 (0x1)
+        report_id: 4
+        string_index: 0
+
+    Usage 129 (0x81), Page 0x1
+    (Generic Desktop device, System Power Down usage)
+        bit_field: 96
+        data_index: 1
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 128 (0x80)
+        link_usage_page: 1 (0x1)
+        report_id: 4
+        string_index: 0
+
+    Usage 130 (0x82), Page 0x1
+    (Generic Desktop device, System Sleep usage)
+        bit_field: 96
+        data_index: 0
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 128 (0x80)
+        link_usage_page: 1 (0x1)
+        report_id: 4
+        string_index: 0
+
+HID device (vID=0x046d, pID=0xc52b, v=0x2401); Logitech; USB Receiver, Path: \\?\hid#vid_046d&pid_c52b&mi_01&col04#8&11c6cc83&0&0003#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c52b&mi_01&col04#8&11c6cc83&0&0003#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C52B&MI_01&COL04\8&11C6CC83&0&0003
+
+  Port (ID): 24
+
+  Port (str):USB\VID_046D&PID_C52B&MI_01\7&2C858C52&0&0001
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Logitech
+Product Sting:          USB Receiver
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc52b
+Version number:         0x2401
+
+Device Path:            \\?\hid#vid_046d&pid_c52b&mi_01&col04#8&11c6cc83&0&0003#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C52B&MI_01&COL04\8&11C6CC83&0&0003
+Parent Instance Id:     24
+
+Top level usage:        Page=0xffbc, Usage=0x88
+Usage identification:   Unknown Page/usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     2 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage Range 1~255 (0x1~0xff), Page 0xffbc (Vendor-defined)
+        bit_field: 0
+        data_index_max: 254
+        data_index_min: 0
+        designator_max: 0
+        designator_min: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 1
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 136 (0x88)
+        link_usage_page: 65468 (0xffbc)
+        report_id: 8
+        string_max: 0
+        string_min: 0
+
+HID device (vID=0x046d, pID=0xc21c, v=0x0203); Unknown manufacturer; G13, Path: \\?\hid#vid_046d&pid_c21c#6&30b7d523&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c21c#6&30b7d523&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C21C\6&30B7D523&1&0000
+
+  Port (ID): 25
+
+  Port (str):USB\VID_046D&PID_C21C\5&E658374&0&12
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Unknown manufacturer
+Product Sting:          G13
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc21c
+Version number:         0x0203
+
+Device Path:            \\?\hid#vid_046d&pid_c21c#6&30b7d523&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C21C\6&30B7D523&1&0000
+Parent Instance Id:     25
+
+Top level usage:        Page=0xff00, Usage=0x00
+Usage identification:   Unknown Page/usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     8 byte(s)
+Buttons:    0 button(s)
+Values:     1 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     992 byte(s)
+Buttons:    0 button(s)
+Values:     1 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     258 byte(s)
+Buttons:    0 button(s)
+Values:     4 value(s)
+
+*** Input Caps ***
+
+    Usage 1 (0x1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 7
+        report_id: 1
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Output Caps ***
+
+    Usage 2 (0x2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 991
+        report_id: 3
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Feature Caps ***
+
+    Usage 3 (0x3), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 7
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 4 (0x4), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 1
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 4
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 5 (0x5), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 2
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 4
+        report_id: 5
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 6 (0x6), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 3
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 0 (0x0)
+        link_usage_page: 65280 (0xff00)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 0
+        physical_min: 0
+        report_count: 257
+        report_id: 6
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+HID device (vID=0x05f3, pID=0x00d2, v=0x0350); PI Engineering; RailDriver Modern Desktop, Path: \\?\hid#vid_05f3&pid_00d2#6&3470c1a4&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_05f3&pid_00d2#6&3470c1a4&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_05F3&PID_00D2\6&3470C1A4&1&0000
+
+  Port (ID): 28
+
+  Port (str):USB\VID_05F3&PID_00D2\5&E658374&0&2
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    PI Engineering
+Product Sting:          RailDriver Modern Desktop
+Serial Number:          
+
+Vendor ID:              0x05f3
+Product ID:             0x00d2
+Version number:         0x0350
+
+Device Path:            \\?\hid#vid_05f3&pid_00d2#6&3470c1a4&1&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_05F3&PID_00D2\6&3470C1A4&1&0000
+Parent Instance Id:     28
+
+Top level usage:        Page=0x000c, Usage=0x01
+Usage identification:   Consumer device, Consumer Control usage
+Link collections:       3 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     15 byte(s)
+Buttons:    1 button(s)
+Values:     1 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     9 byte(s)
+Buttons:    0 button(s)
+Values:     1 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage Range 1~56 (0x1~0x38), Page 0x9 (Button)
+        bit_field: 2
+        data_index_max: 56
+        data_index_min: 1
+        designator_max: 0
+        designator_min: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 1
+        is_string_range: 0
+        is_value: False
+        link_collection: 1
+        link_usage: 0 (0x0)
+        link_usage_page: 12 (0xc)
+        report_id: 0
+        string_max: 0
+        string_min: 0
+
+    Usage 1 (0x1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 1
+        link_usage: 0 (0x0)
+        link_usage_page: 12 (0xc)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 7
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Output Caps ***
+
+    Usage 2 (0x2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 2
+        link_usage: 0 (0x0)
+        link_usage_page: 9 (0x9)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 8
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+HID device (vID=0x046d, pID=0xc2ab, v=0x0001); Unknown manufacturer; @input.inf,%hid_device_system_game%;HID-compliant game controller, Path: \\?\hid#vid_046d&pid_c2ab#2&9ad01b5&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c2ab#2&9ad01b5&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C2AB\2&9AD01B5&0&0000
+
+  Port (ID): 29
+
+  Port (str):LOGIDEVICE\VID_046D&PID_C2AB\1&1A590E2C&0&49835
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Unknown manufacturer
+Product Sting:          @input.inf,%hid_device_system_game%;HID-compliant game controller
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc2ab
+Version number:         0x0001
+
+Device Path:            \\?\hid#vid_046d&pid_c2ab#2&9ad01b5&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C2AB\2&9AD01B5&0&0000
+Parent Instance Id:     29
+
+Top level usage:        Page=0x0001, Usage=0x04
+Usage identification:   Generic Desktop device, Joystick usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     4 byte(s)
+Buttons:    1 button(s)
+Values:     2 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage 1 (0x1), Page 0x9
+    (Unknown Page/usage)
+        bit_field: 2
+        data_index: 2
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        report_id: 1
+        string_index: 0
+
+    Usage 49 (0x31), Page 0x1
+    (Generic Desktop device, Y usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 127
+        logical_min: -127
+        physical_max: -1
+        physical_min: 0
+        report_count: 1
+        report_id: 1
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0x1
+    (Generic Desktop device, X usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 1
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 127
+        logical_min: -127
+        physical_max: -1
+        physical_min: 0
+        report_count: 1
+        report_id: 1
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+HID device (vID=0x046d, pID=0xc299, v=0x1222); Unknown manufacturer; G25 Racing Wheel, Path: \\?\hid#vid_046d&pid_c299#6&11476213&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_046d&pid_c299#6&11476213&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_046D&PID_C299\6&11476213&0&0000
+
+  Port (ID): 30
+
+  Port (str):USB\VID_046D&PID_C299\5&E658374&0&1
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    Unknown manufacturer
+Product Sting:          G25 Racing Wheel
+Serial Number:          
+
+Vendor ID:              0x046d
+Product ID:             0xc299
+Version number:         0x1222
+
+Device Path:            \\?\hid#vid_046d&pid_c299#6&11476213&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_046D&PID_C299\6&11476213&0&0000
+Parent Instance Id:     30
+
+Top level usage:        Page=0x0001, Usage=0x04
+Usage identification:   Generic Desktop device, Joystick usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     13 byte(s)
+Buttons:    2 button(s)
+Values:     7 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     8 byte(s)
+Buttons:    0 button(s)
+Values:     1 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     145 byte(s)
+Buttons:    0 button(s)
+Values:     1 value(s)
+
+*** Input Caps ***
+
+    Usage Range 1~19 (0x1~0x13), Page 0x9 (Button)
+        bit_field: 2
+        data_index_max: 19
+        data_index_min: 1
+        designator_max: 0
+        designator_min: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 1
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        report_id: 0
+        string_max: 0
+        string_min: 0
+
+    Usage 1 (0x1), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        data_index: 20
+        designator_index: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        report_id: 0
+        string_index: 0
+
+    Usage 57 (0x39), Page 0x1
+    (Generic Desktop device, Hat switch usage)
+        bit_field: 66
+        bit_size: 4
+        data_index: 0
+        designator_index: 0
+        has_null: 1
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 7
+        logical_min: 0
+        physical_max: 315
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 20
+        units_exp: 0
+
+    Usage 48 (0x30), Page 0x1
+    (Generic Desktop device, X usage)
+        bit_field: 2
+        bit_size: 14
+        data_index: 21
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 16383
+        logical_min: 0
+        physical_max: 16383
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 49 (0x31), Page 0x1
+    (Generic Desktop device, Y usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 22
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 53 (0x35), Page 0x1
+    (Generic Desktop device, Rz usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 23
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 50 (0x32), Page 0x1
+    (Generic Desktop device, Z usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 24
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 4 (0x4), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 25
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 3
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+    Usage 54 (0x36), Page 0x1
+    (Generic Desktop device, Slider usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 26
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 1
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Output Caps ***
+
+    Usage 2 (0x2), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 7
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+*** Feature Caps ***
+
+    Usage 3 (0x3), Page 0xff00
+    (Unknown Page/usage)
+        bit_field: 2
+        bit_size: 8
+        data_index: 0
+        designator_index: 0
+        has_null: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: False
+        is_designator_range: 0
+        is_range: 0
+        is_string_range: 0
+        is_value: True
+        link_collection: 0
+        link_usage: 4 (0x4)
+        link_usage_page: 1 (0x1)
+        logical_max: 255
+        logical_min: 0
+        physical_max: 255
+        physical_min: 0
+        report_count: 144
+        report_id: 0
+        string_index: 0
+        units: 0
+        units_exp: 0
+
+HID device (vID=0x05f3, pID=0x00ff, v=0x0120); VEC ; VEC USB Footpedal, Path: \\?\hid#vid_05f3&pid_00ff#6&c6d45dc&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Path:      \\?\hid#vid_05f3&pid_00ff#6&c6d45dc&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+
+  Instance:  HID\VID_05F3&PID_00FF\6&C6D45DC&0&0000
+
+  Port (ID): 31
+
+  Port (str):USB\VID_05F3&PID_00FF\5&E658374&0&11
+
+HID device documentation report
+===============================
+
+Top Level Details
+-----------------
+
+Manufacturer String:    VEC 
+Product Sting:          VEC USB Footpedal
+Serial Number:          
+
+Vendor ID:              0x05f3
+Product ID:             0x00ff
+Version number:         0x0120
+
+Device Path:            \\?\hid#vid_05f3&pid_00ff#6&c6d45dc&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}
+Device Instance Id:     HID\VID_05F3&PID_00FF\6&C6D45DC&0&0000
+Parent Instance Id:     31
+
+Top level usage:        Page=0x000c, Usage=0x03
+Usage identification:   Consumer device, Programmable Buttons usage
+Link collections:       1 collection(s)
+
+Reports
+-------
+
+Input Report
+~~~~~~~~~~~~
+Length:     3 byte(s)
+Buttons:    1 button(s)
+Values:     0 value(s)
+
+Output Report
+~~~~~~~~~~~~~
+length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+Feature Report
+~~~~~~~~~~~~~
+Length:     0 byte(s)
+Buttons:    0 button(s)
+Values:     0 value(s)
+
+*** Input Caps ***
+
+    Usage Range 1~3 (0x1~0x3), Page 0x9 (Button)
+        bit_field: 2
+        data_index_max: 2
+        data_index_min: 0
+        designator_max: 0
+        designator_min: 0
+        is_absolute: 1
+        is_alias: 0
+        is_button: True
+        is_designator_range: 0
+        is_range: 1
+        is_string_range: 0
+        is_value: False
+        link_collection: 0
+        link_usage: 3 (0x3)
+        link_usage_page: 12 (0xc)
+        report_id: 0
+        string_max: 0
+        string_min: 0
+
