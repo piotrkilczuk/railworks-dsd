@@ -4,9 +4,9 @@ install:
 - cmd: >-
     SET PYTHON=C:\\Python27
 
-    SET PYTHONUSERBASE=venv
+    SET PYTHONUSERBASE=C:\\Projects\\railwoks-dsd\\venv
 
-    SET PATH=venv\\Scripts;%PYTHON%;%PYTHON%\\Scripts;%PATH%
+    SET PATH=%PYTHONUSERBASE%\\Scripts;%PYTHON%;%PYTHON%\\Scripts;%PATH%
 
     pip install --user -U pip setuptools
 
