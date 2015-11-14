@@ -31,6 +31,31 @@ class BeeperTest(unittest.TestCase):
         ])
 
 
+@mock.patch('dsd.usb.pywinusb', mock.MagicMock())
+class DeviceTestCase(unittest.TestCase):
+
+    def test_infinity_in_usb_2_depress(self):
+        reader = dsd.USBReader(0x05f3, 0x00ff)
+        depress_handler = mock.Mock()
+        reader.on_depress(depress_handler)
+        reader.device.raw_data_handler([0, 0, 0])
+        reader.device.raw_data_handler([0, 1, 0])
+        reader.device.raw_data_handler([0, 2, 0])
+        reader.device.raw_data_handler([0, 4, 0])
+        self.assertEqual(depress_handler.call_count, 1)
+
+    def test_infinity_in_usb_2_release(self):
+        reader = dsd.USBReader(0x05f3, 0x00ff)
+        release_handler = mock.Mock()
+        reader.on_release(release_handler)
+        reader.device.raw_data_handler([0, 0, 0])
+        reader.device.raw_data_handler([0, 1, 0])
+        reader.device.raw_data_handler([0, 2, 0])
+        reader.device.raw_data_handler([0, 4, 0])
+        self.assertEqual(release_handler.call_count, 1)
+
+
+@mock.patch('dsd.usb.pywinusb', mock.MagicMock())
 class MachineTestCase(unittest.TestCase):
 
     beeper_mock = None

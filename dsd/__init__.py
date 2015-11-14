@@ -1,5 +1,6 @@
 from dsd.machine import *
 from dsd.sound import *
+from dsd.usb import *
 
 
 def __main__():
