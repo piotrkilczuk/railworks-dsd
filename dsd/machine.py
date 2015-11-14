@@ -1,6 +1,8 @@
 import raildriver
 import transitions
 
+from dsd import sound
+
 
 __all__ = (
     'Inactive',
@@ -24,13 +26,22 @@ Driver should depress the DSD pedal in 3 seconds.
 
 class DSDModel(object):
 
+    beeper = None
+    """
+    A threaded sound player
+    """
+
     raildriver = None
     """
     raildriver.RailDriver instance used to exchange control data with Train Simulator
     """
 
     def __init__(self):
+        self.beeper = sound.Beeper()
         self.raildriver = raildriver.RailDriver()
+
+    def on_enter_needs_depress(self):
+        self.beeper.start()
 
 
 class DSDMachine(transitions.Machine):

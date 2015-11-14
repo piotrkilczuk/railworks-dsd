@@ -33,10 +33,15 @@ class BeeperTest(unittest.TestCase):
 
 class MachineTestCase(unittest.TestCase):
 
+    beeper_mock = None
+    beeper = None
+
     raildriver_mock = None
     raildriver_patcher = None
 
     def setUp(self):
+        self.beeper = mock.patch('dsd.sound.Beeper')
+        self.beeper_mock = self.beeper.start().return_value
         self.raildriver_patcher = mock.patch('raildriver.RailDriver')
         self.raildriver_mock = self.raildriver_patcher.start().return_value
 
@@ -66,3 +71,11 @@ class MachineTestCase(unittest.TestCase):
         self.raildriver_mock.get_current_controller_value.return_value = -1.0
         machine = dsd.DSDMachine()
         self.assertEqual(machine.current_state.name, 'needs_depress')
+
+    def test_needs_depress_enter_beep(self):
+        """
+        Entering 'needs depress' state should sound the beeper
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('needs_depress')
+        self.beeper_mock.start.assert_called_with()
