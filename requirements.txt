@@ -1,2 +1,3 @@
+py-raildriver=1.0.1
 pywinusb==0.4.0
 transitions==0.2.9
