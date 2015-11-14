@@ -104,3 +104,12 @@ class MachineTestCase(unittest.TestCase):
         machine = dsd.DSDMachine()
         machine.set_state('needs_depress')
         self.beeper_mock.start.assert_called_with()
+
+    def test_needs_depress_to_idle(self):
+        """
+        Depressing the footpedal in 'needs depress' state changes state to 'idle'
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('needs_depress')
+        machine.usb.execute_bindings('on_depress')
+        self.assertEqual(machine.current_state.name, 'idle')

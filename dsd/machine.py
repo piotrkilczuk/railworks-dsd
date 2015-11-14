@@ -2,29 +2,53 @@ import raildriver
 import transitions
 
 from dsd import sound
+from dsd import usb
 
 
 __all__ = (
     'Inactive',
     'NeedsDepress',
+    'Idle',
 
     'DSDMachine',
     'DSDModel',
 )
 
 
-Inactive = transitions.State(name='inactive')
+Inactive = transitions.State(name='inactive', ignore_invalid_triggers=True)
 """
 Reverser is in Neutral or Off. This is also the initial state.
 """
 
-NeedsDepress = transitions.State(name='needs_depress')
+NeedsDepress = transitions.State(name='needs_depress', ignore_invalid_triggers=True)
 """
 Driver should depress the DSD pedal in 3 seconds.
 """
 
+Idle = transitions.State(name='idle', ignore_invalid_triggers=True)
+"""
+Driver should keep the DSD pedal depressed for 60 seconds when will need to re-depress.
+Release will trigger emergency braking.
+Time will be reset when one of main controls is moved.
+"""
+
 
 class DSDModel(object):
+
+    beeper = None
+    raildriver = None
+    usb = None
+
+    def __init__(self, beeper, raildriver, usb):
+        self.beeper = beeper
+        self.raildriver = raildriver
+        self.usb = usb
+
+    def on_enter_needs_depress(self):
+        self.beeper.start()
+
+
+class DSDMachine(transitions.Machine):
 
     beeper = None
     """
@@ -36,18 +60,22 @@ class DSDModel(object):
     raildriver.RailDriver instance used to exchange control data with Train Simulator
     """
 
+    usb = None
+    """
+    usb.USB reader instance used to read data from a footpedal
+    """
+
     def __init__(self):
         self.beeper = sound.Beeper()
         self.raildriver = raildriver.RailDriver()
+        self.usb = usb.USBReader(0x05f3, 0x00ff)  # @TODO: provide support also for other devices
 
-    def on_enter_needs_depress(self):
-        self.beeper.start()
+        model = DSDModel(self.beeper, self.raildriver, self.usb)
+        super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
+        self.add_transition('device_depressed', 'needs_depress', 'idle')
+        self.usb.on_depress(self.model.device_depressed)
 
-class DSDMachine(transitions.Machine):
-    
-    def __init__(self):
-        super(DSDMachine, self).__init__(DSDModel(), states=[Inactive, NeedsDepress], initial='inactive')
         self.check_initial_reverser_state()
 
     def check_initial_reverser_state(self):
