@@ -1,3 +1,5 @@
+import datetime
+
 import raildriver
 import transitions
 
@@ -37,6 +39,7 @@ class DSDModel(object):
 
     beeper = None
     raildriver = None
+    react_by = None
     usb = None
 
     def __init__(self, beeper, raildriver, usb):
@@ -46,6 +49,12 @@ class DSDModel(object):
 
     def on_enter_needs_depress(self):
         self.beeper.start()
+
+    def on_enter_idle(self):
+        self.beeper.stop()
+
+        current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
+        self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
 
 
 class DSDMachine(transitions.Machine):

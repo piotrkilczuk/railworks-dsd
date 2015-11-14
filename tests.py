@@ -1,3 +1,5 @@
+import datetime
+
 import mock
 import unittest
 import winsound
@@ -69,6 +71,7 @@ class MachineTestCase(unittest.TestCase):
         self.beeper_mock = self.beeper.start().return_value
         self.raildriver_patcher = mock.patch('raildriver.RailDriver')
         self.raildriver_mock = self.raildriver_patcher.start().return_value
+        self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30)
 
     def tearDown(self):
         self.raildriver_patcher.stop()
@@ -113,3 +116,19 @@ class MachineTestCase(unittest.TestCase):
         machine.set_state('needs_depress')
         machine.usb.execute_bindings('on_depress')
         self.assertEqual(machine.current_state.name, 'idle')
+
+    def test_idle_enter_no_beep(self):
+        """
+        Entering 'idle' silences the beeper
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        self.beeper_mock.stop.assert_called_with()
+
+    def test_idle_enter_set_timer(self):
+        """
+        Entering 'idle' should set the timer to now + 60 seconds
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        self.assertEqual(machine.model.react_by, datetime.time(12, 31))
