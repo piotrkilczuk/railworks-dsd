@@ -2,4 +2,5 @@ from dsd.machine import *
 from dsd.sound import *
 
 
-VERSION = (0, 0, 1)
+def __main__():
+    raw_input('Press <Enter> to continue...')
