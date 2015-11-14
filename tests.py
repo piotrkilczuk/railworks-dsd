@@ -33,16 +33,36 @@ class BeeperTest(unittest.TestCase):
 
 class MachineTestCase(unittest.TestCase):
 
-    machine = None
+    raildriver_mock = None
+    raildriver_patcher = None
 
     def setUp(self):
-        self.machine = dsd.DSD()
+        self.raildriver_patcher = mock.patch('raildriver.RailDriver')
+        self.raildriver_mock = self.raildriver_patcher.start().return_value
 
-    def assertIsState(self, state_instance):
-        self.assertEqual(self.machine.state, state_instance.name)
+    def tearDown(self):
+        self.raildriver_patcher.stop()
 
-    def test_initial_state_is_Inactive(self):
+    def test_initial_state_is_inactive(self):
         """
         Initially the DSD should be Inactive.
         """
-        self.assertIsState(dsd.Inactive)
+        self.raildriver_mock.get_current_controller_value.return_value = 0
+        machine = dsd.DSDMachine()
+        self.assertEqual(machine.current_state.name, 'inactive')
+
+    def test_initial_reverser_fwd(self):
+        """
+        If in the initial state the reverser is in FWD, move immediately into 'needs depress' state.
+        """
+        self.raildriver_mock.get_current_controller_value.return_value = 1.0
+        machine = dsd.DSDMachine()
+        self.assertEqual(machine.current_state.name, 'needs_depress')
+
+    def test_initial_reverser_rev(self):
+        """
+        If in the initial state the reverser is in REV, move immediately into 'needs depress' state.
+        """
+        self.raildriver_mock.get_current_controller_value.return_value = -1.0
+        machine = dsd.DSDMachine()
+        self.assertEqual(machine.current_state.name, 'needs_depress')
