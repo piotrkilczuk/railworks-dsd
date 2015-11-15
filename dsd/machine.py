@@ -39,13 +39,18 @@ class DSDModel(object):
 
     beeper = None
     raildriver = None
+    raildriver_listener = None
     react_by = None
     usb = None
 
-    def __init__(self, beeper, raildriver, usb):
+    def __init__(self, beeper, raildriver, raildriver_listener, usb):
         self.beeper = beeper
         self.raildriver = raildriver
+        self.raildriver_listener = raildriver_listener
         self.usb = usb
+
+        self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'TrainBrakeControl'])
+        self.raildriver_listener.on_awsreset_change(self.on_important_control_change)
 
     def on_enter_needs_depress(self):
         self.beeper.start()
@@ -55,6 +60,12 @@ class DSDModel(object):
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
+
+    def on_important_control_change(self, new, old):
+        percentage_difference = new / old
+        if percentage_difference < 0.9 or percentage_difference > 1.1:
+            current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
+            self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
 
 
 class DSDMachine(transitions.Machine):
@@ -69,6 +80,11 @@ class DSDMachine(transitions.Machine):
     raildriver.RailDriver instance used to exchange control data with Train Simulator
     """
 
+    raildriver_listener = None
+    """
+    raildriver.events.Listener instance used to listen for control movements
+    """
+
     usb = None
     """
     usb.USB reader instance used to read data from a footpedal
@@ -77,9 +93,10 @@ class DSDMachine(transitions.Machine):
     def __init__(self):
         self.beeper = sound.Beeper()
         self.raildriver = raildriver.RailDriver()
+        self.raildriver_listener = raildriver.events.Listener(self.raildriver, interval=0.1)
         self.usb = usb.USBReader(0x05f3, 0x00ff)  # @TODO: provide support also for other devices
 
-        model = DSDModel(self.beeper, self.raildriver, self.usb)
+        model = DSDModel(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')

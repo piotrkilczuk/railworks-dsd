@@ -1,5 +1,5 @@
 import datetime
-
+import time
 import mock
 import unittest
 import winsound
@@ -132,3 +132,10 @@ class MachineTestCase(unittest.TestCase):
         machine = dsd.DSDMachine()
         machine.set_state('idle')
         self.assertEqual(machine.model.react_by, datetime.time(12, 31))
+
+    def test_idle_aws_reset_resets_timer(self):
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
+        machine.raildriver_listener._execute_bindings('on_awsreset_change', 0, 1)
+        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
