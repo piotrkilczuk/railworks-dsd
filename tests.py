@@ -134,8 +134,21 @@ class MachineTestCase(unittest.TestCase):
         self.assertEqual(machine.model.react_by, datetime.time(12, 31))
 
     def test_idle_aws_reset_resets_timer(self):
+        """
+        When AWS Reset button is used, reset the timer to now + 60 seconds
+        """
         machine = dsd.DSDMachine()
         machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
         machine.raildriver_listener._execute_bindings('on_awsreset_change', 0, 1)
+        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+
+    def test_idle_bell_resets_timer(self):
+        """
+        When AWS Reset button is used, reset the timer to now + 60 seconds
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
+        machine.raildriver_listener._execute_bindings('on_bell_change', 0, 1)
         self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))

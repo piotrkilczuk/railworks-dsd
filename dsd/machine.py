@@ -51,6 +51,7 @@ class DSDModel(object):
 
         self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'TrainBrakeControl'])
         self.raildriver_listener.on_awsreset_change(self.on_important_control_change)
+        self.raildriver_listener.on_bell_change(self.on_important_control_change)
 
     def on_enter_needs_depress(self):
         self.beeper.start()
