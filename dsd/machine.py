@@ -54,6 +54,7 @@ class DSDModel(object):
         self.raildriver_listener.on_bell_change(self.on_important_control_change)
         self.raildriver_listener.on_horn_change(self.on_important_control_change)
         self.raildriver_listener.on_regulator_change(self.on_important_control_change)
+        self.raildriver_listener.on_time_change(self.on_time_change)
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
 
     def on_enter_needs_depress(self):
@@ -71,6 +72,9 @@ class DSDModel(object):
             current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
             self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
 
+    def on_time_change(self, new, _):
+        if self.react_by and new >= self.react_by:
+            self.timeout()
 
 class DSDMachine(transitions.Machine):
 
@@ -104,6 +108,7 @@ class DSDMachine(transitions.Machine):
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
+        self.add_transition('timeout', 'idle', 'needs_depress')
         self.usb.on_depress(self.model.device_depressed)
 
         self.check_initial_reverser_state()
