@@ -54,6 +54,7 @@ class DSDModel(object):
         self.raildriver_listener.on_bell_change(self.on_important_control_change)
         self.raildriver_listener.on_horn_change(self.on_important_control_change)
         self.raildriver_listener.on_regulator_change(self.on_important_control_change)
+        self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
 
     def on_enter_needs_depress(self):
         self.beeper.start()
