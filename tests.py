@@ -117,6 +117,16 @@ class MachineTestCase(unittest.TestCase):
         machine.usb.execute_bindings('on_depress')
         self.assertEqual(machine.current_state.name, 'idle')
 
+    def test_needs_depress_6_passed_emergency_brake(self):
+        """
+        If pedal is not depressed during the 6 seconds period, trigger the EB but don't change the state.
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('needs_depress')
+        machine.raildriver_listener._execute_bindings('on_time_change',
+                                                      datetime.time(12, 30, 6), datetime.time(12, 30, 5))
+        self.raildriver_mock.set_controller_value.assert_called_with('EmergencyBrake', 1)
+
     def test_idle_enter_no_beep(self):
         """
         Entering 'idle' silences the beeper

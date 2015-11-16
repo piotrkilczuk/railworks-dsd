@@ -57,8 +57,14 @@ class DSDModel(object):
         self.raildriver_listener.on_time_change(self.on_time_change)
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
 
+    def emergency_brake(self):
+        self.raildriver.set_controller_value('EmergencyBrake', 1.0)
+
     def on_enter_needs_depress(self):
         self.beeper.start()
+
+        current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
+        self.react_by = (current_datetime + datetime.timedelta(seconds=6)).time()
 
     def on_enter_idle(self):
         self.beeper.stop()
@@ -75,6 +81,7 @@ class DSDModel(object):
     def on_time_change(self, new, _):
         if self.react_by and new >= self.react_by:
             self.timeout()
+
 
 class DSDMachine(transitions.Machine):
 
@@ -109,6 +116,7 @@ class DSDMachine(transitions.Machine):
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
         self.add_transition('timeout', 'idle', 'needs_depress')
+        self.add_transition('timeout', 'needs_depress', 'needs_depress', before='emergency_brake')
         self.usb.on_depress(self.model.device_depressed)
 
         self.check_initial_reverser_state()

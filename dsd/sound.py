@@ -28,6 +28,8 @@ class Beeper(object):
         winsound.PlaySound(self.sound_silence, winsound.SND_PURGE)  # TODO: replace with silence / fadeout
 
     def start(self):
+        if self.running:
+            pass
         self.running = True
         self.thread = threading.Thread(target=self._main_loop)
         self.thread.start()
