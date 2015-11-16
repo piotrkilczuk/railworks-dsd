@@ -18,13 +18,14 @@ class Beeper(object):
 
     def __init__(self):
         sound_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'binary'))
-        self.sound_beep = os.path.join(sound_dir, 'dsd-beep.wav')
+        self.sound_beep = os.path.join(sound_dir, 'AP_66_cab_DSD_Alarm.wav')
+        self.sound_silence = os.path.join(sound_dir, 'silence.wav')
 
     def _main_loop(self):
         winsound.PlaySound(self.sound_beep, winsound.SND_ASYNC | winsound.SND_LOOP)
         while self.running:
             pass
-        winsound.PlaySound(self.sound_beep, winsound.SND_PURGE)  # TODO: replace with silence / fadeout
+        winsound.PlaySound(self.sound_silence, winsound.SND_PURGE)  # TODO: replace with silence / fadeout
 
     def start(self):
         self.running = True
