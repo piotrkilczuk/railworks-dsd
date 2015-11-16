@@ -193,6 +193,15 @@ class MachineTestCase(unittest.TestCase):
         machine.raildriver_listener._execute_bindings('on_trainbrakecontrol_change', 0, 1)
         self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
 
+    def test_idle_idle_pedal_released(self):
+        """
+        When pedal is unexpectedly released in 'idle' instantly trigger EB
+        """
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        machine.usb.execute_bindings('on_release')
+        self.assertEqual(machine.current_state.name, 'needs_depress')
+
     def test_idle_60_seconds_passed_to_needs_depress(self):
         """
         When 60 seconds pass since the timer was last reset change state to 'needs depress'

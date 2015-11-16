@@ -115,9 +115,11 @@ class DSDMachine(transitions.Machine):
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
+        self.add_transition('device_released', 'idle', 'needs_depress', before='emergency_brake')
         self.add_transition('timeout', 'idle', 'needs_depress')
         self.add_transition('timeout', 'needs_depress', 'needs_depress', before='emergency_brake')
         self.usb.on_depress(self.model.device_depressed)
+        self.usb.on_release(self.model.device_released)
 
         self.check_initial_reverser_state()
 
