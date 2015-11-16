@@ -128,6 +128,11 @@ class DSDMachine(transitions.Machine):
         if reverser_state > 0.1 or reverser_state < -0.1:
             self.set_state(NeedsDepress)
 
+    def close(self):
+        self.beeper.stop()
+        self.raildriver_listener.stop()
+        self.usb.close()
+
     def set_state(self, state):
         previous_state = self.current_state
         super(DSDMachine, self).set_state(state)
