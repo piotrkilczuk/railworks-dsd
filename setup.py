@@ -5,7 +5,7 @@ import setuptools
 
 
 CLASSIFIERS = [
-    'Development Status :: 1 - Planning',
+    'Development Status :: 3 - Alpha',
     'Environment :: Win32 (MS Windows)',
     'Intended Audience :: End Users/Desktop',
     'License :: OSI Approved :: MIT License',
