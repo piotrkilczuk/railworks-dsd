@@ -49,24 +49,29 @@ class DSDModel(object):
         self.raildriver_listener = raildriver_listener
         self.usb = usb
 
+    def bind_listener(self):
         self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'TrainBrakeControl'])
         self.raildriver_listener.on_awsreset_change(self.on_important_control_change)
         self.raildriver_listener.on_bell_change(self.on_important_control_change)
         self.raildriver_listener.on_horn_change(self.on_important_control_change)
         self.raildriver_listener.on_regulator_change(self.on_important_control_change)
+        self.raildriver_listener.on_reverser_change(self.reverser_changed)
         self.raildriver_listener.on_time_change(self.on_time_change)
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
 
     def emergency_brake(self):
         self.raildriver.set_controller_value('EmergencyBrake', 1.0)
 
-    def on_enter_needs_depress(self):
+    def is_reverser_in_neutral(self, *args, **kwargs):
+        return -0.1 < self.raildriver.get_current_controller_value('Reverser') < 0.1
+
+    def on_enter_needs_depress(self, *args, **kwargs):
         self.beeper.start()
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=6)).time()
 
-    def on_enter_idle(self):
+    def on_enter_idle(self, *args, **kwargs):
         self.beeper.stop()
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
@@ -116,11 +121,13 @@ class DSDMachine(transitions.Machine):
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
         self.add_transition('device_released', 'idle', 'needs_depress', before='emergency_brake')
+        self.add_transition('reverser_changed', 'inactive', 'needs_depress', unless='is_reverser_in_neutral')
         self.add_transition('timeout', 'idle', 'needs_depress')
         self.add_transition('timeout', 'needs_depress', 'needs_depress', before='emergency_brake')
         self.usb.on_depress(self.model.device_depressed)
         self.usb.on_release(self.model.device_released)
 
+        self.model.bind_listener()
         self.check_initial_reverser_state()
 
     def check_initial_reverser_state(self):

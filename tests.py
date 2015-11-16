@@ -100,6 +100,26 @@ class MachineTestCase(unittest.TestCase):
         machine = dsd.DSDMachine()
         self.assertEqual(machine.current_state.name, 'needs_depress')
 
+    def test_initial_to_needs_depress_fwd(self):
+        """
+        When AWS Reset button is used, reset the timer to now + 60 seconds
+        """
+        self.raildriver_mock.get_current_controller_value.return_value = 0
+        machine = dsd.DSDMachine()
+        self.raildriver_mock.get_current_controller_value.return_value = 1.0
+        machine.raildriver_listener._execute_bindings('on_reverser_change', 1.0, 0)
+        self.assertEqual(machine.current_state.name, 'needs_depress')
+
+    def test_initial_to_needs_depress_rev(self):
+        """
+        When AWS Reset button is used, reset the timer to now + 60 seconds
+        """
+        self.raildriver_mock.get_current_controller_value.return_value = 0
+        machine = dsd.DSDMachine()
+        self.raildriver_mock.get_current_controller_value.return_value = -1.0
+        machine.raildriver_listener._execute_bindings('on_reverser_change', -1.0, 0)
+        self.assertEqual(machine.current_state.name, 'needs_depress')
+
     def test_needs_depress_enter_beep(self):
         """
         Entering 'needs depress' state should sound the beeper
