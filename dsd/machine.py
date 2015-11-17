@@ -116,6 +116,24 @@ class DSDMachine(transitions.Machine):
         self.raildriver_listener = raildriver.events.Listener(self.raildriver, interval=0.1)
         self.usb = usb.USBReader(0x05f3, 0x00ff)  # @TODO: provide support also for other devices
 
+        self.init_model()
+        self.raildriver_listener.on_loco_change(self.init_model)
+
+    def check_initial_reverser_state(self):
+        reverser_state = self.model.raildriver.get_current_controller_value('Reverser')
+        if reverser_state > 0.1 or reverser_state < -0.1:
+            self.set_state(NeedsDepress)
+
+    def close(self):
+        self.beeper.stop()
+        self.raildriver_listener.stop()
+        self.usb.close()
+
+    def init_model(self, *args, **kwargs):  # because we hook it into on_loco_change
+        if not self.raildriver.get_loco_name():
+            self.model = None
+            return
+
         model = DSDModel(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
@@ -130,16 +148,6 @@ class DSDMachine(transitions.Machine):
 
         self.model.bind_listener()
         self.check_initial_reverser_state()
-
-    def check_initial_reverser_state(self):
-        reverser_state = self.model.raildriver.get_current_controller_value('Reverser')
-        if reverser_state > 0.1 or reverser_state < -0.1:
-            self.set_state(NeedsDepress)
-
-    def close(self):
-        self.beeper.stop()
-        self.raildriver_listener.stop()
-        self.usb.close()
 
     def set_state(self, state):
         previous_state = self.current_state

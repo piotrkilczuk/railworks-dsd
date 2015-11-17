@@ -1,5 +1,4 @@
 import datetime
-import time
 import mock
 import unittest
 import winsound
@@ -75,6 +74,14 @@ class MachineTestCase(unittest.TestCase):
 
     def tearDown(self):
         self.raildriver_patcher.stop()
+
+    def test_initially_no_loco(self):
+        """
+        Do not initialize model until loco is loaded
+        """
+        self.raildriver_mock.get_loco_name.return_value = None
+        machine = dsd.DSDMachine()
+        self.assertIsNone(machine.model)
 
     def test_initial_state_is_inactive(self):
         """
@@ -240,3 +247,19 @@ class MachineTestCase(unittest.TestCase):
         self.raildriver_mock.get_current_controller_value.return_value = 0
         machine.raildriver_listener._execute_bindings('on_reverser_change', 0, 1)
         self.assertEqual(machine.current_state.name, 'inactive')
+
+    def test_reinitialize_model_on_loco_change(self):
+        """
+        When loco changes it's better to reinitialize the machine as controls might have changed
+        """
+        machine = dsd.DSDMachine()
+        self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 43', 'Class 43 FGW']
+        initial_model = machine.model
+
+        self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
+        machine.raildriver_listener._execute_bindings('on_loco_change', 'Class 55 BR Blue', 'Class 43 FGW')
+        final_model = machine.model
+
+        self.assertIsNotNone(initial_model)
+        self.assertIsNotNone(final_model)
+        self.assertIsNot(initial_model, final_model)
