@@ -100,9 +100,9 @@ class MachineTestCase(unittest.TestCase):
         machine = dsd.DSDMachine()
         self.assertEqual(machine.current_state.name, 'needs_depress')
 
-    def test_initial_to_needs_depress_fwd(self):
+    def test_inactive_to_needs_depress_fwd(self):
         """
-        When AWS Reset button is used, reset the timer to now + 60 seconds
+        If while 'inactive' reverser is moved to FWD, change to 'needs depress'
         """
         self.raildriver_mock.get_current_controller_value.return_value = 0
         machine = dsd.DSDMachine()
@@ -110,9 +110,9 @@ class MachineTestCase(unittest.TestCase):
         machine.raildriver_listener._execute_bindings('on_reverser_change', 1.0, 0)
         self.assertEqual(machine.current_state.name, 'needs_depress')
 
-    def test_initial_to_needs_depress_rev(self):
+    def test_inactive_to_needs_depress_rev(self):
         """
-        When AWS Reset button is used, reset the timer to now + 60 seconds
+        If while 'inactive' reverser is moved to REV, change to 'needs depress'
         """
         self.raildriver_mock.get_current_controller_value.return_value = 0
         machine = dsd.DSDMachine()
@@ -232,6 +232,9 @@ class MachineTestCase(unittest.TestCase):
         self.assertEqual(machine.current_state.name, 'needs_depress')
 
     def test_idle_reverser_neutral(self):
+        """
+        When while 'idle' reverser is moved to NEU, move to 'inactive'
+        """
         machine = dsd.DSDMachine()
         machine.set_state('idle')
         self.raildriver_mock.get_current_controller_value.return_value = 0
