@@ -36,4 +36,5 @@ class Beeper(object):
 
     def stop(self):
         self.running = False
-        self.thread.join()
+        if self.thread:
+            self.thread.join()

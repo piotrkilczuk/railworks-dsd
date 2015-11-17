@@ -60,7 +60,7 @@ class DSDModel(object):
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
 
     def emergency_brake(self):
-        self.raildriver.set_controller_value('EmergencyBrake', 1.0)
+        self.raildriver.set_controller_value('EmergencyBrake', 1)
 
     def is_reverser_in_neutral(self, *args, **kwargs):
         return -0.1 < self.raildriver.get_current_controller_value('Reverser') < 0.1
@@ -122,6 +122,7 @@ class DSDMachine(transitions.Machine):
         self.add_transition('device_depressed', 'needs_depress', 'idle')
         self.add_transition('device_released', 'idle', 'needs_depress', before='emergency_brake')
         self.add_transition('reverser_changed', 'inactive', 'needs_depress', unless='is_reverser_in_neutral')
+        self.add_transition('reverser_changed', 'idle', 'inactive', conditions='is_reverser_in_neutral')
         self.add_transition('timeout', 'idle', 'needs_depress')
         self.add_transition('timeout', 'needs_depress', 'needs_depress', before='emergency_brake')
         self.usb.on_depress(self.model.device_depressed)

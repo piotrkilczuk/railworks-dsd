@@ -230,3 +230,10 @@ class MachineTestCase(unittest.TestCase):
         machine.set_state('idle')
         machine.raildriver_listener._execute_bindings('on_time_change', datetime.time(12, 31), datetime.time(12, 30, 59))
         self.assertEqual(machine.current_state.name, 'needs_depress')
+
+    def test_idle_reverser_neutral(self):
+        machine = dsd.DSDMachine()
+        machine.set_state('idle')
+        self.raildriver_mock.get_current_controller_value.return_value = 0
+        machine.raildriver_listener._execute_bindings('on_reverser_change', 0, 1)
+        self.assertEqual(machine.current_state.name, 'inactive')
