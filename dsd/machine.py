@@ -50,7 +50,7 @@ class DSDModel(object):
         self.usb = usb
 
     def bind_listener(self):
-        self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'TrainBrakeControl'])
+        self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'Reverser', 'TrainBrakeControl'])
         self.raildriver_listener.on_awsreset_change(self.on_important_control_change)
         self.raildriver_listener.on_bell_change(self.on_important_control_change)
         self.raildriver_listener.on_horn_change(self.on_important_control_change)
@@ -58,12 +58,13 @@ class DSDModel(object):
         self.raildriver_listener.on_reverser_change(self.reverser_changed)
         self.raildriver_listener.on_time_change(self.on_time_change)
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
+        self.raildriver_listener.start()
 
     def emergency_brake(self):
-        self.raildriver.set_controller_value('EmergencyBrake', 1)
+        self.raildriver.set_controller_value('EmergencyBrake', 1.0)
 
     def is_reverser_in_neutral(self, *args, **kwargs):
-        return -0.1 < self.raildriver.get_current_controller_value('Reverser') < 0.1
+        return -0.5 < self.raildriver.get_current_controller_value('Reverser') < 0.5
 
     def on_enter_needs_depress(self, *args, **kwargs):
         self.beeper.start()
@@ -78,8 +79,10 @@ class DSDModel(object):
         self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
 
     def on_important_control_change(self, new, old):
-        percentage_difference = new / old
-        if percentage_difference < 0.9 or percentage_difference > 1.1:
+        if old is None:
+            return
+        difference = abs(new - old)
+        if difference > 0.1:
             current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
             self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
 
@@ -120,8 +123,7 @@ class DSDMachine(transitions.Machine):
         self.raildriver_listener.on_loco_change(self.init_model)
 
     def check_initial_reverser_state(self):
-        reverser_state = self.model.raildriver.get_current_controller_value('Reverser')
-        if reverser_state > 0.1 or reverser_state < -0.1:
+        if not self.model.is_reverser_in_neutral():
             self.set_state(NeedsDepress)
 
     def close(self):
