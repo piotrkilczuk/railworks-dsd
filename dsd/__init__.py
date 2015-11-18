@@ -9,6 +9,7 @@ def __main__():
     logging.basicConfig(
         filename='dsd.log',
         level=logging.DEBUG,
+        format='%(asctime)s %(module)s:%(lineno)d %(message)s'
     )
     machine = DSDMachine()
     try:
