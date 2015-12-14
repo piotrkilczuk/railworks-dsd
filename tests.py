@@ -62,6 +62,8 @@ class MachineTestCase(unittest.TestCase):
     beeper_mock = None
     beeper = None
 
+    machine = None
+
     raildriver_mock = None
     raildriver_patcher = None
 
@@ -74,83 +76,84 @@ class MachineTestCase(unittest.TestCase):
 
     def tearDown(self):
         self.raildriver_patcher.stop()
+        self.machine.close()
 
     def test_initially_no_loco(self):
         """
         Do not initialize model until loco is loaded
         """
         self.raildriver_mock.get_loco_name.return_value = None
-        machine = dsd.DSDMachine()
-        self.assertIsNone(machine.model)
+        self.machine = dsd.DSDMachine()
+        self.assertIsNone(self.machine.model)
 
     def test_initial_state_is_inactive(self):
         """
         Initially the DSD should be Inactive.
         """
         self.raildriver_mock.get_current_controller_value.return_value = 0
-        machine = dsd.DSDMachine()
-        self.assertEqual(machine.current_state.name, 'inactive')
+        self.machine = dsd.DSDMachine()
+        self.assertEqual(self.machine.current_state.name, 'inactive')
 
     def test_initial_reverser_fwd(self):
         """
         If in the initial state the reverser is in FWD, move immediately into 'needs depress' state.
         """
         self.raildriver_mock.get_current_controller_value.return_value = 1.0
-        machine = dsd.DSDMachine()
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine = dsd.DSDMachine()
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_initial_reverser_rev(self):
         """
         If in the initial state the reverser is in REV, move immediately into 'needs depress' state.
         """
         self.raildriver_mock.get_current_controller_value.return_value = -1.0
-        machine = dsd.DSDMachine()
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine = dsd.DSDMachine()
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_inactive_to_needs_depress_fwd(self):
         """
         If while 'inactive' reverser is moved to FWD, change to 'needs depress'
         """
         self.raildriver_mock.get_current_controller_value.return_value = 0
-        machine = dsd.DSDMachine()
+        self.machine = dsd.DSDMachine()
         self.raildriver_mock.get_current_controller_value.return_value = 1.0
-        machine.raildriver_listener._execute_bindings('on_reverser_change', 1.0, 0)
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine.raildriver_listener._execute_bindings('on_reverser_change', 1.0, 0)
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_inactive_to_needs_depress_rev(self):
         """
         If while 'inactive' reverser is moved to REV, change to 'needs depress'
         """
         self.raildriver_mock.get_current_controller_value.return_value = 0
-        machine = dsd.DSDMachine()
+        self.machine = dsd.DSDMachine()
         self.raildriver_mock.get_current_controller_value.return_value = -1.0
-        machine.raildriver_listener._execute_bindings('on_reverser_change', -1.0, 0)
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine.raildriver_listener._execute_bindings('on_reverser_change', -1.0, 0)
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_needs_depress_enter_beep(self):
         """
         Entering 'needs depress' state should sound the beeper
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('needs_depress')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('needs_depress')
         self.beeper_mock.start.assert_called_with()
 
     def test_needs_depress_to_idle(self):
         """
         Depressing the footpedal in 'needs depress' state changes state to 'idle'
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('needs_depress')
-        machine.usb.execute_bindings('on_depress')
-        self.assertEqual(machine.current_state.name, 'idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('needs_depress')
+        self.machine.usb.execute_bindings('on_depress')
+        self.assertEqual(self.machine.current_state.name, 'idle')
 
     def test_needs_depress_6_passed_emergency_brake(self):
         """
         If pedal is not depressed during the 6 seconds period, trigger the EB but don't change the state.
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('needs_depress')
-        machine.raildriver_listener._execute_bindings('on_time_change',
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('needs_depress')
+        self.machine.raildriver_listener._execute_bindings('on_time_change',
                                                       datetime.time(12, 30, 6), datetime.time(12, 30, 5))
         self.raildriver_mock.set_controller_value.assert_called_with('EmergencyBrake', 1)
 
@@ -158,107 +161,107 @@ class MachineTestCase(unittest.TestCase):
         """
         Entering 'idle' silences the beeper
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.beeper_mock.stop.assert_called_with()
 
     def test_idle_enter_set_timer(self):
         """
         Entering 'idle' should set the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31))
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31))
 
     def test_idle_aws_reset_resets_timer(self):
         """
         When AWS Reset button is used, reset the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
-        machine.raildriver_listener._execute_bindings('on_awsreset_change', 0, 1)
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+        self.machine.raildriver_listener._execute_bindings('on_awsreset_change', 0, 1)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
     def test_idle_bell_resets_timer(self):
         """
         When Bell button is used, reset the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
-        machine.raildriver_listener._execute_bindings('on_bell_change', 0, 1)
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+        self.machine.raildriver_listener._execute_bindings('on_bell_change', 0, 1)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
     def test_idle_horn_resets_timer(self):
         """
         When Bell button is used, reset the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
-        machine.raildriver_listener._execute_bindings('on_horn_change', 0, 1)
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+        self.machine.raildriver_listener._execute_bindings('on_horn_change', 0, 1)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
     def test_idle_regulator_resets_timer(self):
         """
         When Bell button is used, reset the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
-        machine.raildriver_listener._execute_bindings('on_regulator_change', 0, 1)
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+        self.machine.raildriver_listener._execute_bindings('on_regulator_change', 0, 1)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
     def test_idle_train_brake_control_resets_timer(self):
         """
         When Bell button is used, reset the timer to now + 60 seconds
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30, 30)
-        machine.raildriver_listener._execute_bindings('on_trainbrakecontrol_change', 0, 1)
-        self.assertEqual(machine.model.react_by, datetime.time(12, 31, 30))
+        self.machine.raildriver_listener._execute_bindings('on_trainbrakecontrol_change', 0, 1)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
     def test_idle_idle_pedal_released(self):
         """
         When pedal is unexpectedly released in 'idle' instantly trigger EB
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
-        machine.usb.execute_bindings('on_release')
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
+        self.machine.usb.execute_bindings('on_release')
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_idle_60_seconds_passed_to_needs_depress(self):
         """
         When 60 seconds pass since the timer was last reset change state to 'needs depress'
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
-        machine.raildriver_listener._execute_bindings('on_time_change', datetime.time(12, 31), datetime.time(12, 30, 59))
-        self.assertEqual(machine.current_state.name, 'needs_depress')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
+        self.machine.raildriver_listener._execute_bindings('on_time_change', datetime.time(12, 31), datetime.time(12, 30, 59))
+        self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_idle_reverser_neutral(self):
         """
         When while 'idle' reverser is moved to NEU, move to 'inactive'
         """
-        machine = dsd.DSDMachine()
-        machine.set_state('idle')
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
         self.raildriver_mock.get_current_controller_value.return_value = 0
-        machine.raildriver_listener._execute_bindings('on_reverser_change', 0, 1)
-        self.assertEqual(machine.current_state.name, 'inactive')
+        self.machine.raildriver_listener._execute_bindings('on_reverser_change', 0, 1)
+        self.assertEqual(self.machine.current_state.name, 'inactive')
 
     def test_reinitialize_model_on_loco_change(self):
         """
         When loco changes it's better to reinitialize the machine as controls might have changed
         """
-        machine = dsd.DSDMachine()
+        self.machine = dsd.DSDMachine()
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 43', 'Class 43 FGW']
-        initial_model = machine.model
+        initial_model = self.machine.model
 
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
-        machine.raildriver_listener._execute_bindings('on_loco_change', 'Class 55 BR Blue', 'Class 43 FGW')
-        final_model = machine.model
+        self.machine.raildriver_listener._execute_bindings('on_loco_change', 'Class 55 BR Blue', 'Class 43 FGW')
+        final_model = self.machine.model
 
         self.assertIsNotNone(initial_model)
         self.assertIsNotNone(final_model)
