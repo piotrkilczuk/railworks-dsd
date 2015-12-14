@@ -17,3 +17,6 @@ def __main__():
             pass
     except KeyboardInterrupt:
         machine.close()
+    except Exception:
+        machine.close()
+        raise
