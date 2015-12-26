@@ -84,7 +84,15 @@ class MachineTestCase(unittest.TestCase):
         """
         self.raildriver_mock.get_loco_name.return_value = None
         self.machine = dsd.DSDMachine()
-        self.assertFalse(self.machine.running)
+        self.assertFalse(self.machine.needs_restart)
+
+    def test_initially_loco(self):
+        """
+        If initially there is already a loco active don't set needs_restart flag
+        """
+        self.raildriver_mock.get_loco_name.return_value = None
+        self.machine = dsd.DSDMachine()
+        self.assertFalse(self.machine.needs_restart)
 
     def test_initial_state_is_inactive(self):
         """
@@ -259,4 +267,4 @@ class MachineTestCase(unittest.TestCase):
         self.machine = dsd.DSDMachine()
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
         self.machine.raildriver_listener._execute_bindings('on_loconame_change', 'Class 55 BR Blue', 'Class 43 FGW')
-        self.assertFalse(self.machine.running)
+        self.assertTrue(self.machine.needs_restart)

@@ -102,6 +102,11 @@ class DSDMachine(transitions.Machine):
     A threaded sound player
     """
 
+    needs_restart = False
+    """
+    True if instance is is no more operational and should be restarted.
+    """
+
     raildriver = None
     """
     raildriver.RailDriver instance used to exchange control data with Train Simulator
@@ -110,11 +115,6 @@ class DSDMachine(transitions.Machine):
     raildriver_listener = None
     """
     raildriver.events.Listener instance used to listen for control movements
-    """
-
-    running = False
-    """
-    True if instance is operational, False if DSDMachine should be reinstantiated
     """
 
     usb = None
@@ -129,13 +129,12 @@ class DSDMachine(transitions.Machine):
         self.usb = usb.USBReader(0x05f3, 0x00ff)  # @TODO: provide support also for other devices
 
         loco_name = self.raildriver.get_loco_name()
-        logging.debug('Detected new active loco {}'.format(loco_name))
+        self.raildriver_listener.on_loconame_change(self.set_needs_restart_flag)
         if not loco_name:
-            self.close()
             return
+        logging.debug('Detected new active loco {}'.format(loco_name))
 
         self.init_model()
-        self.raildriver_listener.on_loconame_change(self.close)
 
     def check_initial_reverser_state(self):
         if not self.model.is_reverser_in_neutral():
@@ -144,8 +143,9 @@ class DSDMachine(transitions.Machine):
     def close(self, *args, **kwargs):
         self.beeper.stop()
         self.raildriver_listener.stop()
+        if self.raildriver_listener.thread:  # this might be a bug in RD listener
+            self.raildriver_listener.thread.join()
         self.usb.close()
-        self.running = False
 
     def init_model(self, *args, **kwargs):  # because we hook it into on_loco_change
         model = DSDModel(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
@@ -161,9 +161,10 @@ class DSDMachine(transitions.Machine):
         self.usb.on_release(self.model.device_released)
 
         self.model.bind_listener()
-        self.running = True
-
         self.check_initial_reverser_state()
+
+    def set_needs_restart_flag(self, _, __):
+        self.needs_restart = True
 
     def set_state(self, state):
         previous_state = self.current_state
