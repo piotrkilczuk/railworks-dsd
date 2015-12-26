@@ -1,4 +1,5 @@
 import datetime
+import logging
 
 import raildriver
 import transitions
@@ -50,7 +51,10 @@ class DSDModel(object):
         self.usb = usb
 
     def bind_listener(self):
-        self.raildriver_listener.subscribe(['AWSReset', 'Bell', 'Horn', 'Regulator', 'Reverser', 'TrainBrakeControl'])
+        available_controls = dict(self.raildriver.get_controller_list()).values()
+        important_controls = ['AWSReset', 'Bell', 'Horn', 'Regulator', 'Reverser', 'TrainBrakeControl']
+        subscribe_controls = filter(lambda i: i in available_controls, important_controls)
+        self.raildriver_listener.subscribe(subscribe_controls)
         self.raildriver_listener.on_awsreset_change(self.on_important_control_change)
         self.raildriver_listener.on_bell_change(self.on_important_control_change)
         self.raildriver_listener.on_horn_change(self.on_important_control_change)
@@ -108,6 +112,11 @@ class DSDMachine(transitions.Machine):
     raildriver.events.Listener instance used to listen for control movements
     """
 
+    running = False
+    """
+    True if instance is operational, False if DSDMachine should be reinstantiated
+    """
+
     usb = None
     """
     usb.USB reader instance used to read data from a footpedal
@@ -119,23 +128,26 @@ class DSDMachine(transitions.Machine):
         self.raildriver_listener = raildriver.events.Listener(self.raildriver, interval=0.1)
         self.usb = usb.USBReader(0x05f3, 0x00ff)  # @TODO: provide support also for other devices
 
+        loco_name = self.raildriver.get_loco_name()
+        logging.debug('Detected new active loco {}'.format(loco_name))
+        if not loco_name:
+            self.close()
+            return
+
         self.init_model()
-        self.raildriver_listener.on_loco_change(self.init_model)
+        self.raildriver_listener.on_loconame_change(self.close)
 
     def check_initial_reverser_state(self):
         if not self.model.is_reverser_in_neutral():
             self.set_state(NeedsDepress)
 
-    def close(self):
+    def close(self, *args, **kwargs):
         self.beeper.stop()
         self.raildriver_listener.stop()
         self.usb.close()
+        self.running = False
 
     def init_model(self, *args, **kwargs):  # because we hook it into on_loco_change
-        if not self.raildriver.get_loco_name():
-            self.model = None
-            return
-
         model = DSDModel(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
@@ -149,6 +161,8 @@ class DSDMachine(transitions.Machine):
         self.usb.on_release(self.model.device_released)
 
         self.model.bind_listener()
+        self.running = True
+
         self.check_initial_reverser_state()
 
     def set_state(self, state):

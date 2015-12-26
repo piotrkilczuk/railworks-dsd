@@ -84,7 +84,7 @@ class MachineTestCase(unittest.TestCase):
         """
         self.raildriver_mock.get_loco_name.return_value = None
         self.machine = dsd.DSDMachine()
-        self.assertIsNone(self.machine.model)
+        self.assertFalse(self.machine.running)
 
     def test_initial_state_is_inactive(self):
         """
@@ -238,7 +238,8 @@ class MachineTestCase(unittest.TestCase):
         """
         self.machine = dsd.DSDMachine()
         self.machine.set_state('idle')
-        self.machine.raildriver_listener._execute_bindings('on_time_change', datetime.time(12, 31), datetime.time(12, 30, 59))
+        self.machine.raildriver_listener._execute_bindings('on_time_change',
+                                                           datetime.time(12, 31), datetime.time(12, 30, 59))
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
     def test_idle_reverser_neutral(self):
@@ -251,18 +252,11 @@ class MachineTestCase(unittest.TestCase):
         self.machine.raildriver_listener._execute_bindings('on_reverser_change', 0, 1)
         self.assertEqual(self.machine.current_state.name, 'inactive')
 
-    def test_reinitialize_model_on_loco_change(self):
+    def test_reinitialize_model_on_loconame_change(self):
         """
         When loco changes it's better to reinitialize the machine as controls might have changed
         """
         self.machine = dsd.DSDMachine()
-        self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 43', 'Class 43 FGW']
-        initial_model = self.machine.model
-
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
-        self.machine.raildriver_listener._execute_bindings('on_loco_change', 'Class 55 BR Blue', 'Class 43 FGW')
-        final_model = self.machine.model
-
-        self.assertIsNotNone(initial_model)
-        self.assertIsNotNone(final_model)
-        self.assertIsNot(initial_model, final_model)
+        self.machine.raildriver_listener._execute_bindings('on_loconame_change', 'Class 55 BR Blue', 'Class 43 FGW')
+        self.assertFalse(self.machine.running)
