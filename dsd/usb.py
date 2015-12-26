@@ -1,3 +1,5 @@
+import logging
+
 from pywinusb.hid import core as pywinusb
 
 
@@ -67,6 +69,7 @@ class InfinityInUSB2Device(AbstractDevice):
         self.device.set_raw_data_handler(self.raw_data_handler)
 
     def raw_data_handler(self, rawdata):
+        logging.debug('Received rawdata {}'.format(rawdata))
         depressed = rawdata[1] == 2
         released = rawdata[1] == 0
         if depressed:
