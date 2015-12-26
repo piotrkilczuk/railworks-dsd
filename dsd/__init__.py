@@ -11,10 +11,13 @@ def __main__():
         level=logging.DEBUG,
         format='%(asctime)s %(module)s:%(lineno)d %(message)s'
     )
-    machine = DSDMachine()
+
     try:
+        machine = DSDMachine()
         while True:
-            pass
+            while machine.running:
+                pass
+            machine = DSDMachine()
     except KeyboardInterrupt:
         machine.close()
     except Exception:
