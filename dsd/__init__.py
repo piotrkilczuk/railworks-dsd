@@ -15,8 +15,9 @@ def __main__():
     try:
         machine = DSDMachine()
         while True:
-            while machine.running:
+            while not machine.needs_restart:
                 pass
+            machine.close()
             machine = DSDMachine()
     except KeyboardInterrupt:
         machine.close()
