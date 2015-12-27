@@ -122,3 +122,7 @@ class Class360DSDModel(BaseDSDModel):
         'Reverser',
         'ThrottleAndBrake'
     ]
+
+    def on_time_change(self, new, _):
+        self.raildriver.set_controller_value('CamInCab', 0)
+        super(Class360DSDModel, self).on_time_change()
