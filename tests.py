@@ -265,6 +265,7 @@ class MachineTestCase(unittest.TestCase):
         When loco changes it's better to reinitialize the machine as controls might have changed
         """
         self.machine = dsd.DSDMachine()
+        self.assertTrue(self.machine.raildriver_listener.running)
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
         self.machine.raildriver_listener._execute_bindings('on_loconame_change', 'Class 55 BR Blue', 'Class 43 FGW')
         self.assertTrue(self.machine.needs_restart)
