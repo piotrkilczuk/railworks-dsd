@@ -1,4 +1,5 @@
 import datetime
+import random
 
 
 class BaseDSDModel(object):
@@ -124,5 +125,7 @@ class Class360DSDModel(BaseDSDModel):
     ]
 
     def on_time_change(self, new, _):
-        self.raildriver.set_controller_value('CamInCab', 0)
-        super(Class360DSDModel, self).on_time_change()
+        current_tab = self.raildriver.get_current_controller_value('ThrottleAndBrake')
+        current_tab += .001 if random.randrange(0, 2) else -.001
+        self.raildriver.set_controller_value('ThrottleAndBrake', current_tab)
+        super(Class360DSDModel, self).on_time_change(new, _)
