@@ -111,3 +111,14 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
         'CombinedController',
         'Reverser'
     ]
+
+
+class Class360DSDModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'DRAButton',
+        'Horn',
+        'Reverser',
+        'ThrottleAndBrake'
+    ]
