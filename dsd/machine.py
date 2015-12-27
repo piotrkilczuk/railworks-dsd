@@ -62,7 +62,6 @@ class DSDModel(object):
         self.raildriver_listener.on_reverser_change(self.reverser_changed)
         self.raildriver_listener.on_time_change(self.on_time_change)
         self.raildriver_listener.on_trainbrakecontrol_change(self.on_important_control_change)
-        self.raildriver_listener.start()
 
     def emergency_brake(self):
         self.raildriver.set_controller_value('EmergencyBrake', 1.0)
@@ -130,7 +129,9 @@ class DSDMachine(transitions.Machine):
 
         loco_name = self.raildriver.get_loco_name()
         self.raildriver_listener.on_loconame_change(self.set_needs_restart_flag)
+        self.raildriver_listener.start()
         if not loco_name:
+            logging.debug('No active loco detected')
             return
         logging.debug('Detected new active loco {}'.format(loco_name))
 
@@ -164,6 +165,7 @@ class DSDMachine(transitions.Machine):
         self.check_initial_reverser_state()
 
     def set_needs_restart_flag(self, _, __):
+        logging.debug('Needs restart due to loco change')
         self.needs_restart = True
 
     def set_state(self, state):
