@@ -73,6 +73,7 @@ class MachineTestCase(unittest.TestCase):
         self.raildriver_patcher = mock.patch('raildriver.RailDriver')
         self.raildriver_mock = self.raildriver_patcher.start().return_value
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30)
+        self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
 
     def tearDown(self):
         self.raildriver_patcher.stop()
@@ -85,14 +86,30 @@ class MachineTestCase(unittest.TestCase):
         self.raildriver_mock.get_loco_name.return_value = None
         self.machine = dsd.DSDMachine()
         self.assertFalse(self.machine.needs_restart)
+        self.assertIsNone(self.machine.model)
 
-    def test_initially_loco(self):
+    def test_initially_loco_explicit_model(self):
         """
-        If initially there is already a loco active don't set needs_restart flag
+        If initially there is already a loco active don't set needs_restart flag.
+        Use the explicit model if available.
         """
-        self.raildriver_mock.get_loco_name.return_value = None
+        Class55DSDModel = type('Class55DSDModel', (dsd.machine.models.BaseDSDModel,), {})
+        with mock.patch('dsd.machine.MODEL_MAPPING', {
+            'DTG.Class 55': Class55DSDModel,
+            'Default': dsd.machine.models.GenericDSDModel,
+        }):
+            self.machine = dsd.DSDMachine()
+            self.assertIsInstance(self.machine.model, Class55DSDModel)
+            self.assertFalse(self.machine.needs_restart)
+
+    def test_initially_loco_default_model(self):
+        """
+        If initially there is already a loco active don't set needs_restart flag.
+        Use the default model if explicit model is not available.
+        """
         self.machine = dsd.DSDMachine()
         self.assertFalse(self.machine.needs_restart)
+        self.assertIsInstance(self.machine.model, dsd.MODEL_MAPPING['Default'])
 
     def test_initial_state_is_inactive(self):
         """
