@@ -20,6 +20,8 @@ __all__ = (
 
 MODEL_MAPPING = {
     'Default': models.GenericDSDModel,
+
+    'RSC.Class70Pack01': models.GenericDSDModel,
 }
 
 

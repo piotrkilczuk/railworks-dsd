@@ -7,3 +7,14 @@ railworks-dsd
    :target: https://codeclimate.com/github/centralniak/railworks-dsd
 
 Hardware driver security device for Train Simulator 2015
+
+
+Supported traction
+------------------
+
+**railworks-dsd** has been positively tested with the following vehicles.
+
+* Class 70
+
+Even if your favorite loco is not listed it's highly probable that it's supported as long as it does not have a built-in
+Driver Security Device in which case it needs to be handled in a special way.
