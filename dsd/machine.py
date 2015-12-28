@@ -21,6 +21,7 @@ __all__ = (
 MODEL_MAPPING = {
     'Default': models.GenericDSDModel,
 
+    'AP_Waggonz.Class90Pack': models.Class90DSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
 }
 
