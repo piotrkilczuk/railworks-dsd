@@ -22,6 +22,8 @@ MODEL_MAPPING = {
     'Default': models.GenericDSDModel,
 
     'AP_Waggonz.Class90Pack': models.Class90DSDModel,
+    'AP_Waggonz.Class90Pack01': models.Class90DSDModel,
+    'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
 }
 

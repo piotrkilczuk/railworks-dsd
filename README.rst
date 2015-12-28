@@ -15,7 +15,7 @@ Supported traction
 **railworks-dsd** has been positively tested with the following vehicles.
 
 * Class 70
-* Class 90 (Armstrong Powerhouse version)
+* Class 90 (Armstrong Powerhouse and Steam versions)
 
 Even if your favorite loco is not listed it's highly probable that it's supported as long as it does not have a built-in
 Driver Security Device in which case it needs to be handled in a special way.
