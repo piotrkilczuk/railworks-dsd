@@ -70,3 +70,20 @@ class GenericDSDModel(BaseDSDModel):
         'Reverser',
         'TrainBrakeControl'
     ]
+
+
+class Class90DSDModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'Bell',
+        'DRA',
+        'Reverser',
+        'SpeedSet',
+        'VirtualBrake',
+        'VirtualThrottle'
+    ]
+
+    def bind_listener(self):
+        self.raildriver.set_controller_value('DSDEnabled', 0)
+        super(Class90DSDModel, self).bind_listener()
