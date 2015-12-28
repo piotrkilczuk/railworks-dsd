@@ -6,6 +6,7 @@ class BaseDSDModel(object):
     Base DSD Model that holds the core operations of a DSD and resets the timer whenever an 'important' control changes.
     """
 
+    emergency_brake_control_name = 'EmergencyBrake'
     important_controls = None
 
     beeper = None
@@ -30,7 +31,7 @@ class BaseDSDModel(object):
         self.raildriver_listener.on_time_change(self.on_time_change)
 
     def emergency_brake(self):
-        self.raildriver.set_controller_value('EmergencyBrake', 1.0)
+        self.raildriver.set_controller_value(self.emergency_brake_control_name, 1.0)
 
     def is_reverser_in_neutral(self, *args, **kwargs):
         return -0.5 < self.raildriver.get_current_controller_value('Reverser') < 0.5
@@ -60,6 +61,16 @@ class BaseDSDModel(object):
             self.timeout()
 
 
+class BuiltinDSDIsolationMixin(object):
+
+    dsd_controller_name = None
+    dsd_controller_value = 0
+
+    def bind_listener(self):
+        self.raildriver.set_controller_value(self.dsd_controller_name, self.dsd_controller_value)
+        super(BuiltinDSDIsolationMixin, self).bind_listener()
+
+
 class GenericDSDModel(BaseDSDModel):
 
     important_controls = [
@@ -84,6 +95,19 @@ class Class90DSDModel(BaseDSDModel):
         'VirtualThrottle'
     ]
 
-    def bind_listener(self):
+    def bind_listener(self):  # @todo: use BuiltinDSDIsolationMixin at next opportunity
         self.raildriver.set_controller_value('DSDEnabled', 0)
         super(Class90DSDModel, self).bind_listener()
+
+
+class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'SafetyIsolation'
+    dsd_controller_value = 1
+    emergency_brake_control_name = 'EmergencyStop'
+    important_controls = [
+        'AWSReset',
+        'Bell',
+        'CombinedController',
+        'Reverser'
+    ]

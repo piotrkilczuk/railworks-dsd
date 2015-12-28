@@ -24,6 +24,7 @@ MODEL_MAPPING = {
     'AP_Waggonz.Class90Pack': models.Class90DSDModel,
     'AP_Waggonz.Class90Pack01': models.Class90DSDModel,
     'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
+    'JustTrains.Voyager': models.Class220_221DSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
 }
 
