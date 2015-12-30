@@ -72,6 +72,10 @@ class MachineTestCase(unittest.TestCase):
         self.beeper_mock = self.beeper.start().return_value
         self.raildriver_patcher = mock.patch('raildriver.RailDriver')
         self.raildriver_mock = self.raildriver_patcher.start().return_value
+        self.raildriver_mock.get_controller_list.return_value = [
+            # this has to have all the controls listed in the 'Default' machine
+            (10, 'AWSReset'), (20, 'Bell'), (30, 'Horn'), (40, 'Regulator'), (50, 'Reverser'), (60, 'TrainBrakeControl')
+        ]
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30)
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
 
