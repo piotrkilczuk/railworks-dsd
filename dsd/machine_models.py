@@ -1,4 +1,5 @@
 import datetime
+import random
 
 
 class BaseDSDModel(object):
@@ -111,3 +112,20 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
         'CombinedController',
         'Reverser'
     ]
+
+
+class Class360DSDModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'DRAButton',
+        'Horn',
+        'Reverser',
+        'ThrottleAndBrake'
+    ]
+
+    def on_time_change(self, new, _):
+        current_tab = self.raildriver.get_current_controller_value('ThrottleAndBrake')
+        current_tab += .001 if random.randrange(0, 2) else -.001
+        self.raildriver.set_controller_value('ThrottleAndBrake', current_tab)
+        super(Class360DSDModel, self).on_time_change(new, _)

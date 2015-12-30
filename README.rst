@@ -18,6 +18,7 @@ Supported traction
 * Class 90 (Armstrong Powerhouse and Steam versions)
 * Class 220 (JustTrains version)
 * Class 221 (JustTrains version)
+* Class 360
 
 Even if your favorite loco is not listed it's highly probable that it's supported as long as it does not have a built-in
 Driver Security Device in which case it needs to be handled in a special way.

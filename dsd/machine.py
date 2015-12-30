@@ -26,6 +26,7 @@ MODEL_MAPPING = {
     'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
     'JustTrains.Voyager': models.Class220_221DSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
+    'RSC.GEML': models.Class360DSDModel,
 }
 
 
@@ -104,6 +105,7 @@ class DSDMachine(transitions.Machine):
     def init_model(self, loco_name):
         model_class = MODEL_MAPPING.get('{}.{}'.format(*loco_name), MODEL_MAPPING['Default'])
         model = model_class(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
+        logging.debug('Instantiated model {}'.format(repr(model)))
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
