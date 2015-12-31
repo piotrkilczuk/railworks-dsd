@@ -27,6 +27,7 @@ MODEL_MAPPING = {
     'JustTrains.Voyager': models.Class220_221DSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
     'RSC.GEML': models.Class360DSDModel,
+    'RSC.ECMLS': models.GenericDSDModel,
 }
 
 
