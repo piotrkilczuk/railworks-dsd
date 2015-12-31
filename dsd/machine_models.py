@@ -1,5 +1,6 @@
 import datetime
 import random
+import time
 
 
 class BaseDSDModel(object):
@@ -66,8 +67,10 @@ class BuiltinDSDIsolationMixin(object):
 
     dsd_controller_name = None
     dsd_controller_value = 0
+    dsd_isolation_delay = 0
 
     def bind_listener(self):
+        time.sleep(self.dsd_isolation_delay)
         self.raildriver.set_controller_value(self.dsd_controller_name, self.dsd_controller_value)
         super(BuiltinDSDIsolationMixin, self).bind_listener()
 
@@ -84,8 +87,11 @@ class GenericDSDModel(BaseDSDModel):
     ]
 
 
-class Class90DSDModel(BaseDSDModel):
+class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
+    dsd_controller_name = 'DSDEnabled'
+    dsd_controller_value = 0
+    dsd_isolation_delay = 2
     important_controls = [
         'AWSReset',
         'Bell',
@@ -95,10 +101,6 @@ class Class90DSDModel(BaseDSDModel):
         'VirtualBrake',
         'VirtualThrottle'
     ]
-
-    def bind_listener(self):  # @todo: use BuiltinDSDIsolationMixin at next opportunity
-        self.raildriver.set_controller_value('DSDEnabled', 0)
-        super(Class90DSDModel, self).bind_listener()
 
 
 class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
