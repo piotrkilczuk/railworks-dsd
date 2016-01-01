@@ -110,7 +110,8 @@ class DSDMachine(transitions.Machine):
         super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
-        self.add_transition('device_released', 'idle', 'needs_depress', before='emergency_brake')
+        self.add_transition('device_released', 'idle', 'needs_depress',
+                            before='emergency_brake', unless='is_reverser_in_neutral')
         self.add_transition('reverser_changed', 'inactive', 'needs_depress', unless='is_reverser_in_neutral')
         self.add_transition('reverser_changed', 'idle', 'inactive', conditions='is_reverser_in_neutral')
         self.add_transition('timeout', 'idle', 'needs_depress')
