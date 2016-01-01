@@ -1,6 +1,5 @@
 engines:
+  fixme:
+    enabled: true
   pep8:
     enabled: false
-
-languages:
-   Python: true
