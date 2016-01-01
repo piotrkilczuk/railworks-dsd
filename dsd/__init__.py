@@ -22,5 +22,6 @@ def __main__():
     except KeyboardInterrupt:
         machine.close()
     except Exception:
+        logging.exception('Unhandled exception.')
         machine.close()
         raise
