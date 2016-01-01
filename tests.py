@@ -64,6 +64,7 @@ class MachineTestCase(unittest.TestCase):
 
     machine = None
 
+    raildriver_controller_values = None
     raildriver_mock = None
     raildriver_patcher = None
 
@@ -71,11 +72,15 @@ class MachineTestCase(unittest.TestCase):
         self.beeper = mock.patch('dsd.sound.Beeper')
         self.beeper_mock = self.beeper.start().return_value
         self.raildriver_patcher = mock.patch('raildriver.RailDriver')
+        self.raildriver_controller_values = {
+            'Reverser': 0,
+        }
         self.raildriver_mock = self.raildriver_patcher.start().return_value
         self.raildriver_mock.get_controller_list.return_value = [
             # this has to have all the controls listed in the 'Default' machine
             (10, 'AWSReset'), (20, 'Bell'), (30, 'Horn'), (40, 'Regulator'), (50, 'Reverser'), (60, 'TrainBrakeControl')
         ]
+        self.raildriver_mock.get_current_controller_value.side_effect = self.raildriver_controller_values.get
         self.raildriver_mock.get_current_time.return_value = datetime.time(12, 30)
         self.raildriver_mock.get_loco_name.return_value = ['DTG', 'Class 55', 'Class 55 BR Blue']
 
@@ -127,7 +132,7 @@ class MachineTestCase(unittest.TestCase):
         """
         If in the initial state the reverser is in FWD, move immediately into 'needs depress' state.
         """
-        self.raildriver_mock.get_current_controller_value.return_value = 1.0
+        self.raildriver_controller_values['Reverser'] = 1.0
         self.machine = dsd.DSDMachine()
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
@@ -135,7 +140,7 @@ class MachineTestCase(unittest.TestCase):
         """
         If in the initial state the reverser is in REV, move immediately into 'needs depress' state.
         """
-        self.raildriver_mock.get_current_controller_value.return_value = -1.0
+        self.raildriver_controller_values['Reverser'] = -1.0
         self.machine = dsd.DSDMachine()
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
@@ -143,9 +148,8 @@ class MachineTestCase(unittest.TestCase):
         """
         If while 'inactive' reverser is moved to FWD, change to 'needs depress'
         """
-        self.raildriver_mock.get_current_controller_value.return_value = 0
         self.machine = dsd.DSDMachine()
-        self.raildriver_mock.get_current_controller_value.return_value = 1.0
+        self.raildriver_controller_values['Reverser'] = 1.0
         self.machine.raildriver_listener._execute_bindings('on_reverser_change', 1.0, 0)
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
@@ -153,11 +157,19 @@ class MachineTestCase(unittest.TestCase):
         """
         If while 'inactive' reverser is moved to REV, change to 'needs depress'
         """
-        self.raildriver_mock.get_current_controller_value.return_value = 0
         self.machine = dsd.DSDMachine()
-        self.raildriver_mock.get_current_controller_value.return_value = -1.0
+        self.raildriver_controller_values['Reverser'] = -1
         self.machine.raildriver_listener._execute_bindings('on_reverser_change', -1.0, 0)
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
+
+    def test_inactive_important_control_change_does_not_bump_timeout(self):
+        """
+        Moving 'important control' should only change 'react_by' when in idle.
+        """
+        self.machine = dsd.DSDMachine()
+        self.assertIsNone(self.machine.model.react_by)
+        self.machine.raildriver_listener._execute_bindings('on_regulator_change', 0, 0.5)
+        self.assertIsNone(self.machine.model.react_by)
 
     def test_needs_depress_enter_beep(self):
         """
@@ -174,6 +186,7 @@ class MachineTestCase(unittest.TestCase):
         self.machine = dsd.DSDMachine()
         self.machine.set_state('needs_depress')
         self.machine.usb.execute_bindings('on_depress')
+        self.beeper_mock.stop.assert_called_with()
         self.assertEqual(self.machine.current_state.name, 'idle')
 
     def test_needs_depress_6_passed_emergency_brake(self):
@@ -183,8 +196,18 @@ class MachineTestCase(unittest.TestCase):
         self.machine = dsd.DSDMachine()
         self.machine.set_state('needs_depress')
         self.machine.raildriver_listener._execute_bindings('on_time_change',
-                                                      datetime.time(12, 30, 6), datetime.time(12, 30, 5))
+                                                           datetime.time(12, 30, 6), datetime.time(12, 30, 5))
         self.raildriver_mock.set_controller_value.assert_called_with('EmergencyBrake', 1)
+
+    def test_needs_depress_important_control_change_does_not_bump_timeout(self):
+        """
+        Moving 'important control' should only change 'react_by' when in idle.
+        """
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('needs_depress')
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 30, 6))
+        self.machine.raildriver_listener._execute_bindings('on_regulator_change', 1, 0.5)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 30, 6))
 
     def test_idle_enter_no_beep(self):
         """
@@ -252,14 +275,28 @@ class MachineTestCase(unittest.TestCase):
         self.machine.raildriver_listener._execute_bindings('on_trainbrakecontrol_change', 0, 1)
         self.assertEqual(self.machine.model.react_by, datetime.time(12, 31, 30))
 
-    def test_idle_idle_pedal_released(self):
+    def test_idle_pedal_released_fwd(self):
         """
-        When pedal is unexpectedly released in 'idle' instantly trigger EB
+        When pedal is unexpectedly released in 'idle' instantly trigger EB but only if reverser is not in neutral
         """
         self.machine = dsd.DSDMachine()
         self.machine.set_state('idle')
+        self.raildriver_controller_values['Reverser'] = 1.0
         self.machine.usb.execute_bindings('on_release')
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
+        self.raildriver_mock.set_controller_value.assert_called_with('EmergencyBrake', 1)
+
+    def test_idle_pedal_released_neutral(self):
+        """
+        When pedal is released in 'idle' don't trigger EB when the reverser is in neutral
+
+        Transition from 'idle' to 'inactive' should happen in 'on_reverser_changed'
+        """
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('idle')
+        self.raildriver_controller_values['Reverser'] = 0  # explicit is better than implicit
+        self.machine.usb.execute_bindings('on_release')
+        self.assertEqual(self.machine.current_state.name, 'idle')
 
     def test_idle_60_seconds_passed_to_needs_depress(self):
         """

@@ -46,17 +46,23 @@ class BaseDSDModel(object):
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=6)).time()
-        logging.debug('Timeout set to {}'.format(self.react_by))
+        logging.debug('on_enter_needs_depress: Timeout set to {}'.format(self.react_by))
 
     def on_enter_idle(self, *args, **kwargs):
         self.beeper.stop()
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
-        logging.debug('Timeout set to {}'.format(self.react_by))
+        logging.debug('on_enter_idle: Timeout set to {}'.format(self.react_by))
+
+    def on_enter_inactive(self, *args, **kwargs):
+        self.react_by = None
+        logging.debug('on_enter_inactive: Timeout set to {}'.format(self.react_by))
 
     def on_important_control_change(self, new, old):
         if old is None:
+            return
+        if self.state != 'idle':
             return
         difference = abs(new - old)
         if difference > 0.1:
