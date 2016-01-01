@@ -1,4 +1,5 @@
 import datetime
+import logging
 import random
 import time
 
@@ -36,19 +37,23 @@ class BaseDSDModel(object):
         self.raildriver.set_controller_value(self.emergency_brake_control_name, 1.0)
 
     def is_reverser_in_neutral(self, *args, **kwargs):
-        return -0.5 < self.raildriver.get_current_controller_value('Reverser') < 0.5
+        reverser = self.raildriver.get_current_controller_value('Reverser')
+        logging.debug('Reverser currently at to {}'.format(reverser))
+        return -0.5 < reverser < 0.5
 
     def on_enter_needs_depress(self, *args, **kwargs):
         self.beeper.start()
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=6)).time()
+        logging.debug('Timeout set to {}'.format(self.react_by))
 
     def on_enter_idle(self, *args, **kwargs):
         self.beeper.stop()
 
         current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
         self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
+        logging.debug('Timeout set to {}'.format(self.react_by))
 
     def on_important_control_change(self, new, old):
         if old is None:
@@ -57,9 +62,11 @@ class BaseDSDModel(object):
         if difference > 0.1:
             current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
             self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
+            logging.debug('Important control moved. Timeout set to {}'.format(self.react_by))
 
     def on_time_change(self, new, _):
         if self.react_by and new >= self.react_by:
+            logging.debug('State timeout {} > {}'.format(new, self.react_by))
             self.timeout()
 
 
