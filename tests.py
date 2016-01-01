@@ -162,6 +162,15 @@ class MachineTestCase(unittest.TestCase):
         self.machine.raildriver_listener._execute_bindings('on_reverser_change', -1.0, 0)
         self.assertEqual(self.machine.current_state.name, 'needs_depress')
 
+    def test_inactive_important_control_change_does_not_bump_timeout(self):
+        """
+        Moving 'important control' should only change 'react_by' when in idle.
+        """
+        self.machine = dsd.DSDMachine()
+        self.assertIsNone(self.machine.model.react_by)
+        self.machine.raildriver_listener._execute_bindings('on_regulator_change', 0, 0.5)
+        self.assertIsNone(self.machine.model.react_by)
+
     def test_needs_depress_enter_beep(self):
         """
         Entering 'needs depress' state should sound the beeper
@@ -177,6 +186,7 @@ class MachineTestCase(unittest.TestCase):
         self.machine = dsd.DSDMachine()
         self.machine.set_state('needs_depress')
         self.machine.usb.execute_bindings('on_depress')
+        self.beeper_mock.stop.assert_called_with()
         self.assertEqual(self.machine.current_state.name, 'idle')
 
     def test_needs_depress_6_passed_emergency_brake(self):
@@ -186,8 +196,18 @@ class MachineTestCase(unittest.TestCase):
         self.machine = dsd.DSDMachine()
         self.machine.set_state('needs_depress')
         self.machine.raildriver_listener._execute_bindings('on_time_change',
-                                                      datetime.time(12, 30, 6), datetime.time(12, 30, 5))
+                                                           datetime.time(12, 30, 6), datetime.time(12, 30, 5))
         self.raildriver_mock.set_controller_value.assert_called_with('EmergencyBrake', 1)
+
+    def test_needs_depress_important_control_change_does_not_bump_timeout(self):
+        """
+        Moving 'important control' should only change 'react_by' when in idle.
+        """
+        self.machine = dsd.DSDMachine()
+        self.machine.set_state('needs_depress')
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 30, 6))
+        self.machine.raildriver_listener._execute_bindings('on_regulator_change', 1, 0.5)
+        self.assertEqual(self.machine.model.react_by, datetime.time(12, 30, 6))
 
     def test_idle_enter_no_beep(self):
         """

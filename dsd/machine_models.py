@@ -55,8 +55,14 @@ class BaseDSDModel(object):
         self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
         logging.debug('on_enter_idle: Timeout set to {}'.format(self.react_by))
 
+    def on_enter_inactive(self, *args, **kwargs):
+        self.react_by = None
+        logging.debug('on_enter_inactive: Timeout set to {}'.format(self.react_by))
+
     def on_important_control_change(self, new, old):
         if old is None:
+            return
+        if self.state != 'idle':
             return
         difference = abs(new - old)
         if difference > 0.1:
