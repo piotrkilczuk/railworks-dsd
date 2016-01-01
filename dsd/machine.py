@@ -31,17 +31,17 @@ MODEL_MAPPING = {
 }
 
 
-Inactive = transitions.State(name='inactive', ignore_invalid_triggers=True)
+Inactive = 'inactive'
 """
 Reverser is in Neutral or Off. This is also the initial state.
 """
 
-NeedsDepress = transitions.State(name='needs_depress', ignore_invalid_triggers=True)
+NeedsDepress = 'needs_depress'
 """
 Driver should depress the DSD pedal in 3 seconds.
 """
 
-Idle = transitions.State(name='idle', ignore_invalid_triggers=True)
+Idle = 'idle'
 """
 Driver should keep the DSD pedal depressed for 60 seconds when will need to re-depress.
 Release will trigger emergency braking.
@@ -107,7 +107,10 @@ class DSDMachine(transitions.Machine):
         model_class = MODEL_MAPPING.get('{}.{}'.format(*loco_name), MODEL_MAPPING['Default'])
         model = model_class(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
         logging.debug('Instantiated model {}'.format(repr(model)))
-        super(DSDMachine, self).__init__(model, states=[Inactive, NeedsDepress, Idle], initial='inactive')
+        super(DSDMachine, self).__init__(model,
+                                         states=[Inactive, NeedsDepress, Idle],
+                                         initial='inactive',
+                                         ignore_invalid_triggers=True)
 
         self.add_transition('device_depressed', 'needs_depress', 'idle')
         self.add_transition('device_released', 'idle', 'needs_depress',
