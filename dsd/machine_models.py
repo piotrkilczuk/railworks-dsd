@@ -100,6 +100,17 @@ class GenericDSDModel(BaseDSDModel):
     ]
 
 
+class Class43JTModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'Horn',
+        'Regulator',
+        'Reverser',
+        'TrainBrakeControl',
+    ]
+
+
 class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'DSDEnabled'
