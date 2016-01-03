@@ -188,13 +188,13 @@ class Class395DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 class Class456DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'DSDMode'
-    dsd_controller_value = 1
+    dsd_controller_value = 0
     dsd_isolation_delay = 2
     important_controls = [
         'AWSReset',
         'Bell',
         'DRA',
-        'Regulator'
+        'Regulator',
         'Reverser',
         'VirtualBrake',
     ]
