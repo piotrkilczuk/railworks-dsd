@@ -1,5 +1,15 @@
 engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - python
   fixme:
     enabled: true
   pep8:
-    enabled: false
+    enabled: true
+  radon:
+    enabled: true
+
+exclude_paths:
+  - tests.py
