@@ -15,6 +15,7 @@ Supported traction
 * Class 43 HST (ECMLS and Just Trains Scottish ECML versions)
 * Class 70
 * Class 86
+* Class 87 (WCML over Shap version)
 * Class 90 (Armstrong Powerhouse and Steam versions)
 * Class 156
 * Class 220 (JustTrains version)
