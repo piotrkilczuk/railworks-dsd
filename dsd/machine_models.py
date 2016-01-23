@@ -111,6 +111,20 @@ class Class43JTModel(BaseDSDModel):
     ]
 
 
+class Class66DSModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSDIsolation'
+    dsd_controller_value = 1
+    dsd_isolation_delay = 2
+    important_controls = [
+        'AWSReset',
+        'Horn',
+        'Regulator',
+        'Reverser',
+        'TrainBrakeControl'
+    ]
+
+
 class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'DSDEnabled'
