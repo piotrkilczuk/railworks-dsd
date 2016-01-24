@@ -21,6 +21,7 @@ Supported traction
 * Class 220 (JustTrains version)
 * Class 221 (JustTrains version)
 * Class 360
+* Class 395
 * Mk3 DVT (Armstrong Powerhouse and Steam versions)
 
 Even if your favorite loco is not listed it's highly probable that it's supported as long as it does not have a built-in
