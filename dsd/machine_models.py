@@ -88,6 +88,15 @@ class BuiltinDSDIsolationMixin(object):
         super(BuiltinDSDIsolationMixin, self).bind_listener()
 
 
+class FauxControllerMovementMixin(object):
+
+    def on_time_change(self, new, _):
+        current_tab = self.raildriver.get_current_controller_value('ThrottleAndBrake')
+        current_tab += .001 if random.randrange(0, 2) else -.001
+        self.raildriver.set_controller_value('ThrottleAndBrake', current_tab)
+        super(FauxControllerMovementMixin, self).on_time_change(new, _)
+
+
 class GenericDSDModel(BaseDSDModel):
 
     important_controls = [
@@ -154,7 +163,7 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
-class Class360DSDModel(BaseDSDModel):
+class Class360DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 
     important_controls = [
         'AWSReset',
@@ -164,8 +173,13 @@ class Class360DSDModel(BaseDSDModel):
         'ThrottleAndBrake'
     ]
 
-    def on_time_change(self, new, _):
-        current_tab = self.raildriver.get_current_controller_value('ThrottleAndBrake')
-        current_tab += .001 if random.randrange(0, 2) else -.001
-        self.raildriver.set_controller_value('ThrottleAndBrake', current_tab)
-        super(Class360DSDModel, self).on_time_change(new, _)
+
+class Class395DSDModel(FauxControllerMovementMixin, BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'DRAButton',
+        'Horn',
+        'Reverser',
+        'ThrottleAndBrake'
+    ]
