@@ -176,13 +176,14 @@ class Class360DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 
 class Class378DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
-    dsd_controller_name = 'VigilEnable'
+    dsd_controller_name = 'DSD'
     dsd_controller_value = 0
     important_controls = [
         'AWSReset',
         'Bell',
-        'DRAButton',
+        'DRA',
         'Horn',
+        'Reverser',
         'ThrottleAndBrake'
     ]
 
