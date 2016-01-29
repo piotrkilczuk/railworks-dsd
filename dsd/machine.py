@@ -38,6 +38,7 @@ MODEL_MAPPING = {
     'RSC.ECMLS': models.GenericDSDModel,
     'RSC.GEML': models.Class360DSDModel,
     'RSC.KentHighSpeed': models.Class395DSDModel,
+    'Thomson.Class455Pack01': models.GenericDSDModel,
 }
 
 
