@@ -22,6 +22,7 @@ Supported traction
 * Class 220 (JustTrains version)
 * Class 221 (JustTrains version)
 * Class 360
+* Class 377 (Southern version)
 * Class 378
 * Class 395
 * Mk3 DVT (Armstrong Powerhouse and Steam versions)
