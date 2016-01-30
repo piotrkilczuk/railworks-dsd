@@ -13,6 +13,7 @@ Supported traction
 **railworks-dsd** has been positively tested with the following vehicles.
 
 * Class 43 HST (ECMLS and Just Trains Scottish ECML versions)
+* Class 47 (all versions)
 * Class 66 (with Armstrong Powerhouse Sound Pack Pro)
 * Class 70
 * Class 86
