@@ -109,7 +109,7 @@ class GenericDSDModel(BaseDSDModel):
     ]
 
 
-class Class43JTDSDModel(BaseDSDModel):
+class Class43JT_47_DSDModel(BaseDSDModel):
 
     important_controls = [
         'AWSReset',

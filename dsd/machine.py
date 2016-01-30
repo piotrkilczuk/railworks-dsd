@@ -25,8 +25,9 @@ MODEL_MAPPING = {
     'AP_Waggonz.Class90Pack01': models.Class90DSDModel,
     'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
     'DTG.Class378Pack01': models.Class378DSDModel,
-    'JustTrains.NL': models.Class43JTDSDModel,  # TODO: make more specific with patterndict
+    'JustTrains.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
     'JustTrains.Voyager': models.Class220_221DSDModel,
+    'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
     'RSC.ECMLS': models.GenericDSDModel,
