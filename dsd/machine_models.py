@@ -194,5 +194,6 @@ class Class465DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
         'Bell',
         'DRAButton',
         'Horn',
+        'Reverser',
         'ThrottleAndBrake'
     ]
