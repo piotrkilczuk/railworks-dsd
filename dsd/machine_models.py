@@ -62,12 +62,11 @@ class BaseDSDModel(object):
     def on_important_control_change(self, new, old):
         if old is None:
             return
-        if self.state != 'idle':
-            return
         difference = abs(new - old)
         if difference > 0.1:
             current_datetime = datetime.datetime.combine(datetime.datetime.today(), self.raildriver.get_current_time())
-            self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
+            if self.state == 'idle':
+                self.react_by = (current_datetime + datetime.timedelta(seconds=60)).time()
             logging.debug('Important control moved. Timeout set to {}'.format(self.react_by))
 
     def on_time_change(self, new, _):
