@@ -108,6 +108,11 @@ class GenericDSDModel(BaseDSDModel):
         'TrainBrakeControl'
     ]
 
+    def bind_listener(self):
+        if 'Bell' not in dict(self.raildriver.get_controller_list()).values():
+            self.important_controls.remove('Bell')
+        super(GenericDSDModel, self).bind_listener()
+
 
 class Class43JT_47_DSDModel(BaseDSDModel):
 
