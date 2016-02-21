@@ -34,6 +34,7 @@ MODEL_MAPPING = {
     'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
+    'RSC.Class465Pack01': models.Class465DSDModel,
     'RSC.ECMLS': models.GenericDSDModel,
     'RSC.GEML': models.Class360DSDModel,
     'RSC.KentHighSpeed': models.Class395DSDModel,
