@@ -188,6 +188,12 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
+class Class319DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSDIsolate'
+    dsd_controller_value = 1
+
+
 class Class360DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 
     important_controls = [

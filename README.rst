@@ -23,6 +23,7 @@ Supported traction
 * Class 156
 * Class 220 (JustTrains version)
 * Class 221 (JustTrains version)
+* Class 319
 * Class 360
 * Class 377 (Southern version)
 * Class 378
