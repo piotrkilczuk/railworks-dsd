@@ -89,10 +89,12 @@ class BuiltinDSDIsolationMixin(object):
 
 class FauxControllerMovementMixin(object):
 
+    faux_controller_name = 'ThrottleAndBrake'
+
     def on_time_change(self, new, _):
-        current_tab = self.raildriver.get_current_controller_value('ThrottleAndBrake')
+        current_tab = self.raildriver.get_current_controller_value(self.faux_controller_name)
         current_tab += .001 if random.randrange(0, 2) else -.001
-        self.raildriver.set_controller_value('ThrottleAndBrake', current_tab)
+        self.raildriver.set_controller_value(self.faux_controller_name, current_tab)
         super(FauxControllerMovementMixin, self).on_time_change(new, _)
 
 
@@ -156,6 +158,7 @@ class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
 class Class91DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 
+    faux_controller_name = 'VirtualThrottle'
     important_controls = [
         'AWSReset',
         'Bell',
