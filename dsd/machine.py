@@ -30,6 +30,8 @@ MODEL_MAPPING = {
     'JustTrains.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
     'JustTrains.Voyager': models.Class220_221DSDModel,
 
+    'Kuju.RailSimulator': models.NoDSDModel,  # TODO: make more specific with patterndict (Black5)
+
     'RSC.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
     'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,
