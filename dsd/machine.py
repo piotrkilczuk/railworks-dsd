@@ -35,6 +35,9 @@ MODEL_MAPPING = {
 
     'Kuju.RailSimulator': models.GenericDSDModel,  # TODO: make more specific with patterndict
 
+    'RailRight.Class40Blue': models.Class40DSDModel,  # TODO: make generic with patterndict
+    'RailRight.Class40Green': models.Class40DSDModel,  # TODO: make generic with patterndict
+
     'RSC.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
     'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,

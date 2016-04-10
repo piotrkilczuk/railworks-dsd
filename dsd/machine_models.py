@@ -124,6 +124,19 @@ class Class37WHLSouthDSDModel(BaseDSDModel):
     ]
 
 
+class Class40DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DeadmanEnabled'
+    dsd_controller_value = 0
+    dsd_isolation_delay = 2
+    important_controls = [
+        'AWSReset',
+        'Reverser',
+        'VirtualBrake',
+        'VirtualThrottle',
+    ]
+
+
 class Class43JT_47_DSDModel(BaseDSDModel):
 
     important_controls = [
