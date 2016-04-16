@@ -31,6 +31,7 @@ MODEL_MAPPING = {
     'JustTrains.Voyager': models.Class220_221DSDModel,
 
     'RSC.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
+    'RSC.Class27Pack01': models.GenericDSDModel,
     'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
@@ -38,6 +39,7 @@ MODEL_MAPPING = {
     'RSC.ECMLS': models.GenericDSDModel,
     'RSC.GEML': models.Class360DSDModel,
     'RSC.KentHighSpeed': models.Class395DSDModel,
+
     'Thomson.Class455Pack01': models.GenericDSDModel,
 }
 
