@@ -113,6 +113,17 @@ class GenericDSDModel(BaseDSDModel):
         super(GenericDSDModel, self).bind_listener()
 
 
+class Class37WHLSouthDSDModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'Horn',
+        'Reverser',
+        'VirtualBrake',
+        'VirtualThrottle',
+    ]
+
+
 class Class43JT_47_DSDModel(BaseDSDModel):
 
     important_controls = [

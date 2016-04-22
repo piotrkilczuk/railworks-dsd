@@ -27,6 +27,8 @@ MODEL_MAPPING = {
 
     'DTG.Class378Pack01': models.Class378DSDModel,
 
+    'JL.WHL': models.Class37WHLSouthDSDModel,  # TODO: make more specific with patterndict
+
     'JustTrains.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
     'JustTrains.Voyager': models.Class220_221DSDModel,
 
