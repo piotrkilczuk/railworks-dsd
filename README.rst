@@ -12,7 +12,7 @@ Supported traction
 
 **railworks-dsd** has been positively tested with the following vehicles.
 
-* Class 37 (West Highland Line South version)
+* Class 37 (Weardale and Teesdale and West Highland Line South versions)
 * Class 43 HST (ECMLS and Just Trains Scottish ECML versions)
 * Class 47 (all versions)
 * Class 66 (with Armstrong Powerhouse Sound Pack Pro)
