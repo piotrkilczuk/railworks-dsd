@@ -201,6 +201,19 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
+class Class325DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSDIsolate'
+    dsd_controller_value = 1
+    dsd_isolation_delay = 0
+    important_controls = [
+        'AWSReset',
+        'Horn',
+        'Reverser',
+        'ThrottleAndBrake',
+    ]
+
+
 class Class360DSDModel(FauxControllerMovementMixin, BaseDSDModel):
 
     important_controls = [
