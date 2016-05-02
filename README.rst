@@ -12,6 +12,7 @@ Supported traction
 
 **railworks-dsd** has been positively tested with the following vehicles.
 
+* Class 33
 * Class 37 (default and West Highland Line South versions)
 * Class 40 (Armstrong Powerhouse version)
 * Class 43 HST (ECMLS and Just Trains Scottish ECML versions)

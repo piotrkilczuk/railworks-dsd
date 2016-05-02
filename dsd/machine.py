@@ -39,6 +39,7 @@ MODEL_MAPPING = {
     'RailRight.Class40Green': models.Class40DSDModel,  # TODO: make generic with patterndict
 
     'RSC.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
+    'RSC.Class33Pack01': models.GenericDSDModel,
     'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
     'RSC.Class66Pack02': models.Class66APDSDModel,
     'RSC.Class70Pack01': models.GenericDSDModel,
