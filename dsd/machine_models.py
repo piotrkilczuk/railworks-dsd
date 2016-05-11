@@ -165,6 +165,16 @@ class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
+class Class142APDSDModel(BaseDSDModel):
+
+    important_controls = [
+        'AWSReset',
+        'Reverser',
+        'VirtualBrake',
+        'VirtualThrottle',
+    ]
+
+
 class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'SafetyIsolation'
