@@ -46,6 +46,7 @@ MODEL_MAPPING = {
     'RSC.Class421Pack02': models.GenericDSDModel,
     'RSC.Class422Pack01': models.GenericDSDModel,
     'RSC.Class423Pack01': models.GenericDSDModel,
+    'RSC.Class444Pack01': models.GenericDSDModel,
     'RSC.Class465Pack01': models.Class465DSDModel,
     'RSC.ECMLS': models.GenericDSDModel,
     'RSC.GEML': models.Class360DSDModel,
