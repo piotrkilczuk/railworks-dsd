@@ -31,6 +31,7 @@ Supported traction
 * Class 421
 * Class 422
 * Class 423
+* Class 444
 * Class 455 (/9 version)
 * Class 465
 * Mk3 DVT (Armstrong Powerhouse and Steam versions)
