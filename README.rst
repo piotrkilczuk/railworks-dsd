@@ -20,6 +20,7 @@ Supported traction
 * Class 70
 * Class 86
 * Class 90 (Armstrong Powerhouse and Steam versions)
+* Class 92
 * Class 142 (Armstrong Powerhouse version)
 * Class 156
 * Class 220 (JustTrains version)

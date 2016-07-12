@@ -178,6 +178,20 @@ class Class90DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
+class Class92DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSDEnabled'
+    dsd_controller_value = 0
+    dsd_isolation_delay = 2
+    important_controls = [
+        'AWSReset',
+        'Horn',
+        'Reverser',
+        'VirtualBrake',
+        'VirtualThrottle'
+    ]
+
+
 class Class142APDSDModel(BaseDSDModel):
 
     important_controls = [
