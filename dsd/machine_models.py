@@ -1,5 +1,6 @@
 import datetime
 import logging
+import operator
 import random
 import time
 
@@ -185,11 +186,19 @@ class Class92DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     dsd_isolation_delay = 2
     important_controls = [
         'AWSReset',
-        'Horn',
         'Reverser',
         'VirtualBrake',
         'VirtualThrottle'
     ]
+
+    def bind_listener(self):
+        super(Class92DSDModel, self).bind_listener()
+
+        # various variants of Class 92 have different controller sets (sic!)
+        try:
+            self.raildriver.set_controller_value('DSDIsolate', 1)
+        except ValueError:
+            pass
 
 
 class Class142APDSDModel(BaseDSDModel):
