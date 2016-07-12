@@ -1,6 +1,5 @@
 import datetime
 import logging
-import operator
 import random
 import time
 
