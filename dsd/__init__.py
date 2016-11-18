@@ -23,5 +23,8 @@ def __main__():
         machine.close()
     except Exception:
         logging.exception('Unhandled exception.')
-        machine.close()
+        try:
+            machine.close()
+        except Exception:
+            pass
         raise
