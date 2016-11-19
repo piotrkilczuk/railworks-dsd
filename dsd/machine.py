@@ -21,6 +21,8 @@ __all__ = (
 MODEL_MAPPING = {
     'Default': models.GenericDSDModel,
 
+    'AP.Class321Pack01': models.Class321DSDModel,
+
     'AP_Waggonz.Class90Pack': models.Class90DSDModel,  # TODO: make generic with patterndict
     'AP_Waggonz.Class90Pack01': models.Class90DSDModel,
     'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
