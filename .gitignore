@@ -1,6 +1,7 @@
 *.py[cod]
 *.eggs
 
+/build/
 /dist/
 /railworks_dsd.egg-info/
 
