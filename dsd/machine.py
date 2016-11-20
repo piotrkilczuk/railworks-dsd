@@ -53,6 +53,8 @@ MODEL_MAPPING = {
     'RSC.GEML': models.Class360DSDModel,
     'RSC.KentHighSpeed': models.Class395DSDModel,
 
+    'RSDerek.WearValleyRailway': models.GenericDSDModel,  # TODO: make more specific with patterndict
+
     'Thomson.Class455Pack01': models.GenericDSDModel,
 }
 
