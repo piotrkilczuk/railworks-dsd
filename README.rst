@@ -29,6 +29,7 @@ Supported traction
 * Class 377 (Southern version)
 * Class 378
 * Class 395
+* Class 415
 * Class 421
 * Class 422
 * Class 423
