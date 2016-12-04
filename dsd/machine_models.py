@@ -96,6 +96,10 @@ class FauxControllerMovementMixin(object):
         super(FauxControllerMovementMixin, self).on_time_change(new, _)
 
 
+class NoDSDModel(BaseDSDModel):
+    pass
+
+
 class GenericDSDModel(BaseDSDModel):
 
     important_controls = [
