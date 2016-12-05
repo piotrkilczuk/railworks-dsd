@@ -1,6 +1,8 @@
 import logging
+import re
 
 import raildriver
+import toolz
 import transitions
 
 from dsd import machine_models as models
@@ -19,42 +21,40 @@ __all__ = (
 
 
 MODEL_MAPPING = {
-    'Default': models.GenericDSDModel,
+    'AP_Waggonz\.Class90Pack': models.Class90DSDModel,  # TODO: make generic with patterndict
+    'AP_Waggonz\.Class90Pack01': models.Class90DSDModel,
+    'AP_Waggonz\.Class90Pack02': models.Class90DSDModel,
+    'AP_Waggonz\.Class142Pack': models.Class142APDSDModel,
 
-    'AP_Waggonz.Class90Pack': models.Class90DSDModel,  # TODO: make generic with patterndict
-    'AP_Waggonz.Class90Pack01': models.Class90DSDModel,
-    'AP_Waggonz.Class90Pack02': models.Class90DSDModel,
-    'AP_Waggonz.Class142Pack': models.Class142APDSDModel,
+    'DTG\.Class378Pack01': models.Class378DSDModel,
+    'DTG\.Class415Pack01': models.GenericDSDModel,
 
-    'DTG.Class378Pack01': models.Class378DSDModel,
-    'DTG.Class415Pack01': models.GenericDSDModel,
+    'JL\.WHL': models.Class37WHLSouthDSDModel,  # TODO: make more specific with patterndict
 
-    'JL.WHL': models.Class37WHLSouthDSDModel,  # TODO: make more specific with patterndict
+    'JustTrains\.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
+    'JustTrains\.Voyager': models.Class220_221DSDModel,
 
-    'JustTrains.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
-    'JustTrains.Voyager': models.Class220_221DSDModel,
+    'Kuju\.RailSimulator': models.GenericDSDModel,  # TODO: make more specific with patterndict
 
-    'Kuju.RailSimulator': models.GenericDSDModel,  # TODO: make more specific with patterndict
+    'RailRight\.Class40Blue': models.Class40DSDModel,  # TODO: make generic with patterndict
+    'RailRight\.Class40Green': models.Class40DSDModel,  # TODO: make generic with patterndict
 
-    'RailRight.Class40Blue': models.Class40DSDModel,  # TODO: make generic with patterndict
-    'RailRight.Class40Green': models.Class40DSDModel,  # TODO: make generic with patterndict
+    'RSC\.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
+    'RSC\.Class47Pack01': models.Class43JT_47_DSDModel,
+    'RSC\.Class66Pack02': models.Class66APDSDModel,
+    'RSC\.Class70Pack01': models.GenericDSDModel,
+    'RSC\.Class325Pack01': models.Class325DSDModel,
+    'RSC\.Class421Pack01': models.GenericDSDModel,
+    'RSC\.Class421Pack02': models.GenericDSDModel,
+    'RSC\.Class422Pack01': models.GenericDSDModel,
+    'RSC\.Class423Pack01': models.GenericDSDModel,
+    'RSC\.Class444Pack01': models.GenericDSDModel,
+    'RSC\.Class465Pack01': models.Class465DSDModel,
+    'RSC\.ECMLS': models.GenericDSDModel,
+    'RSC\.GEML': models.Class360DSDModel,
+    'RSC\.KentHighSpeed': models.Class395DSDModel,
 
-    'RSC.BrightonMainLine': models.GenericDSDModel,  # TODO: make more specific with patterndict
-    'RSC.Class47Pack01': models.Class43JT_47_DSDModel,
-    'RSC.Class66Pack02': models.Class66APDSDModel,
-    'RSC.Class70Pack01': models.GenericDSDModel,
-    'RSC.Class325Pack01': models.Class325DSDModel,
-    'RSC.Class421Pack01': models.GenericDSDModel,
-    'RSC.Class421Pack02': models.GenericDSDModel,
-    'RSC.Class422Pack01': models.GenericDSDModel,
-    'RSC.Class423Pack01': models.GenericDSDModel,
-    'RSC.Class444Pack01': models.GenericDSDModel,
-    'RSC.Class465Pack01': models.Class465DSDModel,
-    'RSC.ECMLS': models.GenericDSDModel,
-    'RSC.GEML': models.Class360DSDModel,
-    'RSC.KentHighSpeed': models.Class395DSDModel,
-
-    'Thomson.Class455Pack01': models.GenericDSDModel,
+    'Thomson\.Class455Pack01': models.GenericDSDModel,
 }
 
 
@@ -131,7 +131,10 @@ class DSDMachine(transitions.Machine):
         self.usb.close()
 
     def init_model(self, loco_name):
-        model_class = MODEL_MAPPING.get('{}.{}'.format(*loco_name), MODEL_MAPPING['Default'])
+        model_matches = toolz.dicttoolz.keyfilter(
+            lambda k: re.compile('^{}'.format(k)).search('{}.{}.{}'.format(*loco_name)) is not None, MODEL_MAPPING)
+        model_class = model_matches.values()[0] if model_matches else models.GenericDSDModel
+
         model = model_class(self.beeper, self.raildriver, self.raildriver_listener, self.usb)
         logging.debug('Instantiated model {}'.format(repr(model)))
         super(DSDMachine, self).__init__(model,
