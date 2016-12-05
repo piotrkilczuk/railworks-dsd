@@ -104,21 +104,21 @@ class MachineTestCase(unittest.TestCase):
         """
         Class55DSDModel = type('Class55DSDModel', (dsd.machine.models.BaseDSDModel,), {})
         with mock.patch('dsd.machine.MODEL_MAPPING', {
-            'DTG.Class 55': Class55DSDModel,
-            'Default': dsd.machine.models.GenericDSDModel,
+            'DTG\.Class 55': Class55DSDModel,
         }):
             self.machine = dsd.DSDMachine()
             self.assertIsInstance(self.machine.model, Class55DSDModel)
             self.assertFalse(self.machine.needs_restart)
 
-    def test_initially_loco_default_model(self):
+    @mock.patch('dsd.machine.models.GenericDSDModel')
+    def test_initially_loco_default_model(self, mock_default_machine_model):
         """
         If initially there is already a loco active don't set needs_restart flag.
         Use the default model if explicit model is not available.
         """
         self.machine = dsd.DSDMachine()
         self.assertFalse(self.machine.needs_restart)
-        self.assertIsInstance(self.machine.model, dsd.MODEL_MAPPING['Default'])
+        mock_default_machine_model.assert_called_with(mock.ANY, mock.ANY, mock.ANY, mock.ANY)
 
     def test_initial_state_is_inactive(self):
         """
