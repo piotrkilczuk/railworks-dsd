@@ -201,6 +201,18 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
     ]
 
 
+class Class321DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSDToggle'
+    important_controls = [
+        'AWSReset',
+        'DRA',
+        'VirtualBrake',
+        'VirtualReverser',
+        'VirtualThrottle',
+    ]
+
+
 class Class325DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'DSDIsolate'
