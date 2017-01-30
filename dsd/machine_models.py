@@ -264,6 +264,20 @@ class Class395DSDModel(FauxControllerMovementMixin, BaseDSDModel):
     ]
 
 
+class Class455_8Model(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DSD'
+    dsd_controller_value = 0
+    important_controls = [
+        'AWSReset',
+        'Bell',
+        'DRAButton',
+        'Horn',
+        'VirtualBrake',
+        'VirtualThrottle',
+    ]
+
+
 class Class465DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'VigilEnable'

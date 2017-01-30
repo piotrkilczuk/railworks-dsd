@@ -28,6 +28,7 @@ MODEL_MAPPING = {
 
     'DTG.Class378Pack01': models.Class378DSDModel,
     'DTG.Class415Pack01': models.GenericDSDModel,
+    'DTG.Class455Pack02': models.Class455_8Model,
 
     'JL.WHL': models.Class37WHLSouthDSDModel,  # TODO: make more specific with patterndict
 
