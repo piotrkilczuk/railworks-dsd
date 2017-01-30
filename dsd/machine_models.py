@@ -188,7 +188,7 @@ class Class142APDSDModel(BaseDSDModel):
     ]
 
 
-class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+class Class220_221_222DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'SafetyIsolation'
     dsd_controller_value = 1
@@ -197,6 +197,7 @@ class Class220_221DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
         'AWSReset',
         'Bell',
         'CombinedController',
+        'Horn',
         'Reverser'
     ]
 

@@ -32,7 +32,8 @@ MODEL_MAPPING = {
     'JL.WHL': models.Class37WHLSouthDSDModel,  # TODO: make more specific with patterndict
 
     'JustTrains.NL': models.Class43JT_47_DSDModel,  # TODO: make more specific with patterndict
-    'JustTrains.Voyager': models.Class220_221DSDModel,
+    'JustTrains.Meridian': models.Class220_221_222DSDModel,
+    'JustTrains.Voyager': models.Class220_221_222DSDModel,
 
     'Kuju.RailSimulator': models.GenericDSDModel,  # TODO: make more specific with patterndict
 
