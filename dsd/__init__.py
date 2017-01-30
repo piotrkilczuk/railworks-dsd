@@ -1,3 +1,4 @@
+import cgitb
 import logging
 
 from dsd.machine import *
@@ -11,6 +12,7 @@ def __main__():
         level=logging.DEBUG,
         format='%(asctime)s %(module)s:%(lineno)d %(message)s'
     )
+    cgitb.enable(False, 'dsd_logging')
 
     try:
         machine = DSDMachine()
