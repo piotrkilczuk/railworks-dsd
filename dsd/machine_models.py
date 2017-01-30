@@ -148,6 +148,22 @@ class Class43JT_47_DSDModel(BaseDSDModel):
     ]
 
 
+class Class57DSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
+
+    dsd_controller_name = 'DVDOn'
+    dsd_controller_value = 0
+    dsd_isolation_delay = 2
+    important_controls = [
+        'AWSReset',
+        'Bell',
+        'Horn',
+        'HornHigh',
+        'Reverser',
+        'VirtualBrake',
+        'VirtualThrottle',
+    ]
+
+
 class Class66APDSDModel(BuiltinDSDIsolationMixin, BaseDSDModel):
 
     dsd_controller_name = 'DSDIsolation'

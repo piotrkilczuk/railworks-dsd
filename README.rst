@@ -16,6 +16,7 @@ Supported traction
 * Class 40 (Armstrong Powerhouse version)
 * Class 43 HST (ECMLS and Just Trains Scottish ECML versions)
 * Class 47 (all versions)
+* Class 57 (WCR Rail Tours version)
 * Class 66 (with Armstrong Powerhouse Sound Pack Pro)
 * Class 70
 * Class 86
